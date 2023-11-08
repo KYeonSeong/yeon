@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  카카오<link rel="stylesheet" href="ho.css"> -->
+    <!-- include libraries(jQuery, bootstrap) -->    
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4d1a0401f5d71f5a39e93ba5eada55e9&libraries=services"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script defer src="./js/map.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+</head>
+<body>
+    
+  <form action="/saveSellerInfo" method="POST" enctype="multipart/form-data">
+    <details>
+        <summary>판매자 정보입력</summary>
+        <input type ="text" name="id"id="id" class="form-control" placeholder="작성자 ID"></imput>
+        <input type ="text" name="company" id="company" class="form-control" placeholder="회사이름"></imput>
+        <input type ="text" name="galleryName" id="galleryName" class="form-control" placeholder="전시회이름"></input>
+        <input type ="text" name="galleryNum" id="galleryNum"class="form-control" placeholder="전시회번호"></imput>
+
+      </details>
+      <details>
+        <summary>티켓 정보입력</summary>
+        <input type ="number" name="kidPrice" id="kidPrice" class="form-control w-30" placeholder="어린이 가격"></imput>
+          <input type ="number" name="teenPrice"id="teenPrice" class="form-control w-30" placeholder="청소년 가격"></imput>
+          <input type ="number" name="adultPrice" id="adultPrice" class="form-control w-30" placeholder="어른 가격"></imput>
+
+      </details>
+    <!-- <div>
+      <label for="summernote1">예매정보</label>
+      <div id="summernote1"></div>
+      </div>
+      
+  
+      
+      <div>
+        <label for="summernote2">이용정보</label> 
+        <div id="summernote2"></div>
+      </div>
+      
+
+      <div>
+        <label for="summernote3">유의사항</label>
+        <div id="summernote3"></div>
+      </div>
+      <div>
+        <label for="summernote4">장소안내</label>
+        <div id="summernote4"></div>
+      </div> -->
+      예매정보<div id="summernote1" aria-label="예매정보"></div>
+      이용정보<div id="summernote2" aria-label="이용정보"></div>
+      유의사항<div id="summernote3" aria-label="유의사항"></div>
+      장소안내<div id="summernote4" aria-label="장소안내"></div>
+      판매정보<div id="summernote5" aria-label="판매정보"></div>
+    <!-- 주소 입력 폼 -->
+    <p style="margin-top: -12px">
+      <input type="text" name="location" id="location" style="width:300px;" placeholder="좌표를 등록할 주소를 정확히 입력해주세요.">  
+    </p>
+    <button type="button" id="locationRegister">확인하기</button>
+    
+    <!-- 지도 표시 컨테이너 -->
+    <div id="map" style="width:450px; height:350px;"></div>
+     
+
+      <!-- <p style="margin-top:-12px">
+        <em class="link">
+            <a href="/web/documentation/#CategoryCode" target="_blank">전시회 위치등록</a>
+        </em>
+    </p>
+    <div id="map" style="width:100%;height:350px;"></div> -->
+
+      <!-- <div>
+        <label for="summernote5">판매정보</label>
+        <div id="summernote5"></div>
+      </div> -->
+      <p font-weight: bold;>전시회 포스터 선택</p>
+      <input type="file" name="photo" id="photoInput" accept="image/*">
+    <div id="photoPreview"></div>
+      <script>
+  
+        $('#summernote1').summernote({  
+          height: 100, // 썸머노트 높이 설정
+          width : 1200,
+        
+          toolbar: [ // 사용할 툴바 옵션 설정
+          
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+  
+        ]
+        });
+
+        $('#summernote2').summernote({
+          height: 200,
+          width : 1200,
+    
+          toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          
+    
+        ]
+        });
+        
+        $('#summernote3').summernote({
+          height: 200,
+          width : 1200,
+          toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+        
+        ]
+        });
+        $('#summernote4').summernote({
+          height: 100,
+          width : 1200,
+          toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+        
+        ]
+        });
+        $('#summernote5').summernote({
+          height: 200,
+          width : 1200,
+          toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+        
+        ]
+        });
+      
+</script>
+    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=94e3cfd35e764b1aadc40ed448605d8b"></script>
+      <script>
+      // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
+      var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+      
+      var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+          mapOption = {
+              center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+              level: 3 // 지도의 확대 레벨
+          };  
+      
+      // 지도를 생성합니다    
+      var map = new kakao.maps.Map(mapContainer, mapOption); 
+      
+      // 장소 검색 객체를 생성합니다
+      var ps = new kakao.maps.services.Places(map); 
+      
+      // 카테고리로 은행을 검색합니다
+      ps.categorySearch('BK9', placesSearchCB, {useMapBounds:true}); 
+      
+      // 키워드 검색 완료 시 호출되는 콜백함수 입니다
+      function placesSearchCB (data, status, pagination) {
+          if (status === kakao.maps.services.Status.OK) {
+              for (var i=0; i<data.length; i++) {
+                  displayMarker(data[i]);    
+              }       
+          }
+      }
+      
+      // 지도에 마커를 표시하는 함수입니다
+      function displayMarker(place) {
+          // 마커를 생성하고 지도에 표시합니다
+          var marker = new kakao.maps.Marker({
+              map: map,
+              position: new kakao.maps.LatLng(place.y, place.x) 
+          });
+      
+          // 마커에 클릭이벤트를 등록합니다
+          kakao.maps.event.addListener(marker, 'click', function() {
+              // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+              infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+              infowindow.open(map, marker);
+          });
+      }
+      </script> -->
+   
+    
+    <!-- <script>
+        document.getElementById('photoInput').addEventListener('change', function () {
+            const fileInput = this;
+            const previewDiv = document.getElementById('photoPreview');
+            const file = fileInput.files[0];
+            const fileStatus = document.getElementById('fileStatus');
+    
+            if (file) {
+                const reader = new FileReader();
+    
+                reader.onload = function (e) {
+                    const image = document.createElement('img');
+                    image.setAttribute('src', e.target.result);
+                    image.setAttribute('alt', '미리보기');
+                    image.style.maxWidth = '300px'; // 이미지가 너무 크면 적절한 크기로 조절
+                    previewDiv.innerHTML = ''; // 기존 미리보기 초기화
+                    previewDiv.appendChild(image); // 미리보기 이미지 추가
+                    fileStatus.innerHTML = `선택된 파일: ${file.name}`;
+                }
+    
+                reader.readAsDataURL(file);
+            } else {
+                previewDiv.innerHTML = '';
+                fileStatus.innerHTML = '선택된 파일 없음';
+            }
+        });
+    </script> -->
+<button type="button" id="saveButton">저장</button>
+
+<script>
+$(document).ready(function () {
+    $('#saveButton').click(function () {
+        saveFormData();
+    });
+});
+
+function saveFormData() {
+    const button = document.getElementById('saveButton');
+    button.disabled = true;
+
+    const idvalue = document.getElementById('id').value;
+    const companyvalue = document.getElementById('company').value;
+    const galleryNamevalue = document.getElementById('galleryName').value;
+    const galleryNumvalue = document.getElementById('galleryNum').value;
+    const kidPricevalue = document.getElementById('kidPrice').value;
+    const teenvalue = document.getElementById('teenPrice').value;
+    const adultPricevalue = document.getElementById('adultPrice').value;
+    const locationvalue = document.getElementById('location').value;
+    const ticketInfo = $('#summernote1').summernote('code');
+    const agencyNotice = $('#summernote2').summernote('code');
+    const useInfo = $('#summernote3').summernote('code');
+    const locationInfo = $('#summernote4').summernote('code');
+    const sellerInfo = $('#summernote5').summernote('code');
+
+    const photoInput = document.getElementById('photoInput').files[0];
+
+    const formData = new FormData();
+    formData.append("id", idvalue);
+    formData.append("company", companyvalue);
+    formData.append("galleryName", galleryNamevalue);
+    formData.append("galleryNum", galleryNumvalue);
+    formData.append("kidPrice", kidPricevalue);
+    formData.append("teenPrice", teenvalue);
+    formData.append("adultPrice", adultPricevalue);
+    formData.append("ticketInfo", ticketInfo);
+    formData.append("agencyNotice", agencyNotice);
+    formData.append("useInfo", useInfo);
+    formData.append("locationInfo", locationInfo);
+    formData.append("sellerInfo", sellerInfo);
+    formData.append("photo", photoInput);
+    formData.append("location", locationvalue);
+
+    console.log("saveFormData 함수가 호출되었습니다.");
+    console.log("idvalue:", idvalue);
+    console.log("companyvalue:", companyvalue);
+    console.log("sellerInfo", sellerInfo);
+
+    $.ajax({
+        type: "POST",
+        url: "/saveSellerInfo",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (response) {
+            console.log(response);
+            alert("데이터가 성공적으로 저장되었습니다.");
+            location.href = "/index.php";
+        },
+        error: function () {
+            alert("저장 성공");
+            button.disabled = false;
+        }
+    });
+}
+</script>
+      
+      </form>
+      
+</body>
+</html> 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>후기글 수정</title>
+</head>
+<body>
+    <div id="reviewModify">
+        <form name="frmReview" class="frmReview" method="post">
+            <span>제목</span>
+            <input type="text" name="subject" th:value="${vo.subject}" placeholder="제목을 입력하세요">
+            <br/>
+            <textarea name="doc" class="doc" th:text="${vo.doc}" cols="122" rows="25" placeholder="내용을 입력하세요"></textarea>
+            <br/>
+            <label class="fileUpload">
+                <i class="fa-solid fa-folder-open"></i><span class="fileText">첨부</span>
+                <input type="file" name="attFile" class="attFile" style="display:none;" multiple>
+            </label>
+            <br/>
+            <!--기존에 첨부된 파일 정보-->
+            <div class="delAttFile">
+                <th:block th:each="att:${vo.attFiles}">
+                    <lable>
+                        <input type="checkbox" name="delFile" onclick="delCheck(this)" th:value="${att.sysFile}">
+                        <th:block th:text="${att.oriFile}"/>
+                    </lable><br/>
+                </th:block>
+            </div>
+            <div class="btnZone">
+                <button type="button" class="btnReviewModify">수정</button>
+                <button type="button" class="reviewBtn"><i class="fa-solid fa-list"></i></button>
+            </div>
+            <input type="hidden" name="sno" th:value="${vo.sno}"/>
+            <input type="hidden" name="id" th:value="${vo.id}"/>
+            <input type="hidden" name="nal" th:value="${vo.nal}"/>
+            <input type="hidden" name="grp" th:value="${vo.grp}"/>
+            <input type="hidden" name="gallery_num" th:value="${vo.gallery_num}"/>
+            <input type="hidden" name="payNum" th:value="${vo.payNum}"/>
+            <input type="hidden" name="nowPage" th:value="${page2.nowPage}"/>
+            <input type="hidden" name="findStr" th:value="${page2.findStr}"/>
+        </form>
+    </div>
+</body>
+</html>

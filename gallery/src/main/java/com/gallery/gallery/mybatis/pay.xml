@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="pay">
+    <select id="userPayList" parameterType="TicketVo" resultType="TicketVo">
+        select customer.*,pay.*,galleryPage.*
+        from pay
+        join customer on pay.id=customer.id        
+        join galleryPage on pay.gallery_num=galleryPage.gallery_num
+        where customer.id = #{id}
+    </select>
+
+    <select id="getTicketSerial" parameterType='String' resultType='Integer'>    
+        select getTicketSerial(#{_parameter})
+    </select>
+
+    <insert id="paymentR" parameterType="PayVo">
+        insert into pay(payNum,gallery_num,id,payTime,teenEa,kidEa,adultEa,adult_price,teen_price,kid_price)
+        values(
+          #{payNum},#{gallery_num},#{id},now(),#{teenEa},#{kidEa},#{adultEa},#{adult_price},#{teen_price},#{kid_price}
+          )
+    </insert>
+    <insert id="ticketNumber" parameterType="PayVo">
+        insert into ticketNumber(payNum) values(#{payNum})
+    </insert>
+
+    <insert id="createTicket" parameterType="PayVo">
+        insert into ticket(id,gallery_num,payNum,company)
+        values(#{id},#{gallery_num},#{payNum},#{company})
+    </insert>
+    <update id="cashUpdate" parameterType="CustomerVo">
+        update customer set cash=#{cash} where id=#{id}
+    </update>
+</mapper>

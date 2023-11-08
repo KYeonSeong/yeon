@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자유글 작성</title>
+</head>
+<body>
+    <div id="freeRegister">
+        <form name="frmFree" class="frmFree" method="post">
+            <h2>자유글</h2>
+            <span>제목</span>
+            <input type="text" name="subject" size="90" placeholder="제목을 입력하세요">
+            <br/>
+            <span>내용</span>
+            <br/>
+            <textarea name="doc" class="doc" cols="122" rows="25" placeholder="내용을 입력하세요"></textarea>
+            <br/>
+            <label class="fileUpload">
+                <i class="fa-solid fa-folder-open"></i><span class="fileText">첨부</span>
+                <input type="file" name="attFile" class="attFile" style="display:none;" multiple>
+            </label>
+            <br/>
+            <span>게시글 비밀번호</span>
+            <input type="password" name="freePwd" placeholder="공백없이 숫자로 입력해주세요">
+            <div class="btnZone">
+                <button type="button" class="btnFreeRegister">등록</button>
+                <button type="button" class="freeBtn"><i class="fa-solid fa-list"></i></button>
+            </div>
+            <input type="hidden" name="id" th:value="${session.id}"/>
+            <input type="hidden" name="nal" th:value="${param.nal}"/>
+            <input type="hidden" name="findStr" th:value="${page.findStr}"/>
+            <input type="hidden" name="nowPage" th:value="${page.nowPage}"/>
+        </form>
+    </div>
+</body>
+</html>

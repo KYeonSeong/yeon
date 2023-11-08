@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE mapper         
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"      
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <!--맵퍼파일-->
+ <!--#{id} ==>>  studentVo.getId( )  --> 
+<mapper namespace="sellerpage">
+      <select id="selectSeller" parameterType="String" resultType="SellerVo">
+        select * from seller
+        where id=#{id}
+    </select>
+<!-- <select id="sellergallerylist" parameterType="String" resultType="gellerylistVo">
+    SELECT gallerypage_new.photo_path, gallerypage_new.company, gallerypage_new.galleryname,
+    gallerypage_new.adultprice, gallerypage_new.kidprice, gallerypage_new.teenprice, 
+     seller.company
+    FROM seller
+    JOIN gallerypage_new ON seller.company = gallerypage_new.company
+    WHERE seller.company = #{company}
+</select> -->
+<!-- <select id="sellergallerylist" parameterType="String" resultType="gellerylistVo">
+    SELECT gallerypage.photo_path, gallerypage.company, gallerypage.galleryName,
+    gallerypage.adultPrice, gallerypage.kidPrice, gallerypage.teenPrice, 
+    seller.company
+    FROM seller
+    JOIN gallerypage ON seller.company = gallerypage.company
+    WHERE seller.company = #{company}
+</select> -->
+<select id="sellergallerylist" parameterType="String" resultType="gellerylistVo">
+    SELECT gallerypage.photo_path, gallerypage.company, gallerypage.gallery_name AS galleryName,
+    gallerypage.adult_price AS adultPrice, gallerypage.kid_price AS kidPrice, gallerypage.teen_price AS teenPrice,
+    seller.company
+    FROM seller
+    JOIN gallerypage ON seller.company = gallerypage.company
+    WHERE seller.company = #{company}
+</select>
+    </mapper>
+   

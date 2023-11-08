@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE mapper         
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"      
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <!--맵퍼파일-->
+ <!--#{id} ==>>  studentVo.getId( )  --> 
+<mapper namespace="mypage">
+    <!--마이페이지 판매자정보-->
+    <select id="selectCustomer" parameterType="String" resultType="CustomerVo">
+        select * from customer
+        where id=#{id}
+    </select>
+
+    <select id="checkCustomer" parameterType="String" resultType="CustomerVo">
+        select * from customer
+        where id=#{id}
+    </select>
+    
+    <!--예매내역//결제된 티켓정보 리스트-->
+    <select id="selectTicket" parameterType="String" resultType="TicketVo">        
+        select ticket.*, pay.*,
+        customer.id, customer.name, customer.cash,        
+        galleryPage.photo_path, galleryPage.company, galleryPage.gallery_name
+        from ticket
+        join customer on ticket.id = customer.id
+        join pay on ticket.payNum = pay.payNum
+        join galleryPage on ticket.gallery_num = galleryPage.gallery_num        
+        where ticket.id=#{id}
+    </select>
+
+    <!--상세내역//결제된 티켓중 선택한 정보-->
+    <select id="ticketPreview" parameterType="TicketVo" resultType="TicketVo">
+        select ticket.*, pay.*, seller.*,
+        customer.id, customer.name, customer.cash,     
+        galleryPage.*   
+        from  ticket
+        join  customer    on ticket.id = customer.id
+        join  pay         on ticket.payNum = pay.payNum
+        join  galleryPage on ticket.gallery_num = galleryPage.gallery_num 
+        join  seller      on ticket.company = seller.company
+        where ticket.id=#{id} and ticket.payNum=#{payNum}
+    </select>
+
+    
+    <select id="totEa" parameterType="String" resultType="PayVo">
+`       select totEa from pay p 
+        where id=#{id};
+    </select>
+
+    <select id="ticketNumber" parameterType="Integer" resultType="TicketNumberVo">
+        select ticket.gallery_num,ticketNumber.* from ticket
+        join ticketNumber
+        on ticket.payNum = ticketNumber.payNum
+        where ticketNumber.payNum=#{payNum}        
+    </select>
+
+    <update id="refund" parameterType="TicketVo">
+        update ticket set status=2, refundTime=now()
+        where id=#{id} and payNum=#{payNum}
+    </update>
+
+    <select id="customerCash" parameterType="TicketVo" resultType="TicketVo">
+        select * from customer
+        where id=#{id}
+    </select>
+
+    <select id="compute" parameterType="TicketVo" resultType="TicketVo">
+        select pay.*,customer.* from pay
+        join customer on pay.id=customer.id
+        where payNum=#{payNum} and pay.id=#{id}
+    </select>
+
+    <update id="refundCash" parameterType="TicketVo">
+        update customer set cash=#{cash}
+        where id=#{id}
+    </update>
+
+    <update id="customerModify" parameterType="CustomerVo">
+        update customer set pwd=#{pwd}, email=#{email},
+        tel=#{tel}
+        where id=#{id}
+    </update>
+
+    <update id="customerModify2" parameterType="CustomerVo">
+        update customer set email=#{email}, tel=#{tel}
+        where id=#{id}
+    </update>
+
+    <delete id="customerDelete" parameterType="String">
+        delete from customer where id=#{id}
+    </delete>
+
+</mapper>

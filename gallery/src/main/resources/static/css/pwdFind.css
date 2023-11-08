@@ -1,0 +1,125 @@
+/* 전체 페이지 스타일 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+}
+
+/* 비밀번호 찾기 컨테이너 스타일 */
+#pwdFind {
+  min-height: 100vh;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.sizeOFF {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.sizeOn {
+  width: 400px;
+  border: 2px double #aaa;
+  padding: 10px;
+  margin: 0 auto;
+  border: 3px solid #7D9D9C;
+  border-radius: 8px;
+}
+
+/* 입력 상자 스타일 */
+.frmPwdFind input[type="email"],
+.frmPwdFind input[type="text"],
+.frmPwdFind input[type="password"],
+.frmPwdFind input[type="number"] {
+  width: 80%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 버튼 스타일 */
+.frmPwdFind button[type="button"] {
+  background-color: #7D9D9C; /* 파란색 */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 80%;
+}
+
+.sizeOFF>.idFindBtn {
+  background-color: #7D9D9C;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+}
+.sizeOFF>.idFindBtn:hover{
+  background-color: #0155b0;
+}
+
+.sizeOFF>.pwdFindBtn {
+  background-color: #7D9D9C;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  
+}
+
+.resultMessage {
+  margin-top: 10px;
+  color: red;
+  /* 주황색 */
+}
+
+.frmPwdFind textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+/* 가입 안내 텍스트 스타일 */
+.frmPwdFind p {
+  font-weight: bold;
+}
+
+/* h1 스타일 */
+#pwdFind h1 {
+  margin-bottom: 10px;
+}
+
+.frmPwdFind .textArea {
+  display: block;
+  background-color: #f7f7f7;
+  /* 회색 배경 */
+  color: #333;
+  /* 검정색 글씨 */
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 버튼 호버 효과 */
+.frmPwdFind button[type="button"]:hover {
+  background-color: #0056b3; /* 호버 시의 배경색 변경 */
+}

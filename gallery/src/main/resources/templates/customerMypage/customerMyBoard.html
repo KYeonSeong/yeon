@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+</head>
+<body>        
+    <div class="customerTicketView" th:fragment="fragment">
+        <div id="freeBoard">
+            <h1>내 게시물</h1>
+            <form name="frmFree" class="frmFree" method="post">
+                <input type="hidden" name="id" value="${sessionScope.id}">            
+                <input type="hidden" name="nowPage" th:value="${page.nowPage}"/>            
+                <input type="hidden" name="sno"/>
+            </form>
+
+            <div class="freeList">
+                <div class="title">
+                    <span class="sno">SNO</span>
+                    <span class="subject">제목</span>
+                    <span class="id">작성자</span>
+                    <span class="nal">작성일</span>                
+                </div>
+                <div class="items">
+                    <div class="item" th:each="d:${list}" th:onclick="freeView([[${d.sno}]])">
+                        <span class="sno" th:text="${d.sno}">NO</span>
+                        <span class="subject" th:utext="${d.attCnt>0} ? |${d.subject} (${d.attCnt})| : ${d.subject}">제목</span>
+                        <span class="id" th:text="${d.id}">작성자</span>
+                        <span class="nal" th:text="${d.nal}">작성일</span>                    
+                    </div>
+                </div>           
+            </div>
+
+            <div class="page">
+                <th:block th:if="${page.startPage gt 1}">
+                    <button type="button" class="btnFirst" value="1" onclick="move(this.value)">처음</button>
+                    <button type="button" class="btnPrev" th:value="${page.startPage-1}" onclick="move(this.value)">이전</button>
+                </th:block>
+
+                <th:block th:each="m : ${#numbers.sequence(page.startPage, page.endPage, 1)}">
+                    <button type="button" class="btnNum" 
+                            th:class="${page.nowPage eq m}? 'now' : 'btnNum'" 
+                            onclick="move(this.value)" th:text="${m}" th:value="${m}"/>
+                </th:block>
+
+                <th:block th:if="${page.endPage lt page.totPage}">
+                    <button type="button" class="btnNext" 
+                            th:value="${page.endPage+1}" onclick="move(this.value)">다음</button>
+                    <button type="button" class="btnLast" 
+                            th:value="${page.totPage}" onclick="move(this.value)">맨끝</button>
+                </th:block>
+            </div>        
+        </div>
+    </div>
+
+</body>
+</html>

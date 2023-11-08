@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일반 회원가입</title>
+  <script src="http://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script defer src="/js/joinGeneral.js"></script>
+  <link rel="stylesheet" href="/css/joinGeneral.css">
+</head>
+<body>
+  <div id="joinGeneral">
+    <img class="logoImage" src="/adimage/ToGallery-logo.png" alt="to Gallery">
+    <form name="frmGeneral" class="frmjoinGeneral" method="POST">
+      <input type="text" class="generalId" name="id" placeholder="아이디">
+      <br/>
+      <span class="idCondition"></span>
+      <br/>
+      <input type="password" class="generalPwd" name="pwd"  placeholder="비밀번호">
+      <br/>
+      <span class="pwdCondition"></span>
+      <br/>
+      <input type="password" class="generalPwdCk" placeholder="비밀번호 확인">
+      <br/>
+      <span class="pwdCkCondition"></span>
+      <br/>
+      <input type="text" class="generalName" name="name" placeholder="이름">
+      <br/>
+      <span class="nameCondition"></span>
+      <br/>
+      <input type="date" class="generalBirth" name="birth" placeholder="생년월일">
+      <br/>
+      <input type="email" class="generalEmail" name="email" placeholder="이메일">
+      <button type="button" class="emailSendBtn" name="emailSendBtn">인증번호 전송</button>
+      <br/>
+      <span class="emailCondition"></span>
+      <br/>
+      <input type="text" name="number" class="emailNumber" placeholder="인증번호 입력">
+      <button type="button" class="emailConfirmBtn" name="emailConfirmBtn">이메일 인증</button>
+      <br/>
+      <input type="text" class="Confirm" name="Confirm" style="display:none" value="">
+      <br/>
+      <input type="text" class="generalTel" name="tel" placeholder="휴대폰 번호">
+      <br/>
+      <span class="telCondition"></span>
+      <br>
+      <p>이용약관 동의</p>
+      <div class="consentZone">
+        <label><input type="checkbox" id="consentAll">전체 동의</label><hr/>
+        <label><input type="checkbox" class="consent" name="consent">만 14세 이상입니다. (필수)</label><hr/>
+        <label><input type="checkbox" class="consent" name="consent">이용약관 동의 (필수) <a href="https://timeticket.co.kr/html_file.php?file1=default.html&file2=user_stipulation.html&mode=join" target="_blank">내용보기</a></label><hr/>
+        <label><input type="checkbox" class="consent" name="consent">개인정보 수집 이용 동의 (필수)<a href="https://timeticket.co.kr/html_file.php?file1=default.html&file2=user_defend_s.html&mode=join" target="_blank">내용보기</a></label>
+        <br/>
+      </div>
+      <button type="button" class="signUpGeneral">가입완료</button>
+    </form>
+  </div>
+  
+</body>
+</html>

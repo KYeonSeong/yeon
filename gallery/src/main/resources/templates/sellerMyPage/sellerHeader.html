@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    
+   
+</head>
+<body>        
+    <div class="sellerMypage" th:fragment="fragment" >  
+        <div class="sellerMypage_top" > <!--상단-->
+
+            <div class="sellerMypage_top_left">
+                <!--이미지영역-->
+            </div>
+
+            <div class="sellerMypage_top_right"  >
+                <div th:each="v2:${List}">
+                    <div class="sellerMypage_top_contents" >
+                        <div>안녕하세요😊</div>
+                        <span th:text="${v2.id}+님"></span>
+                    </div>
+
+                    <div class="sellerMypage_top_contents">
+                        <div class="sellerMypage_top_title"></div>    
+                </div>                
+            </div>
+
+        </div>       
+    </div>
+</body>
+</html>

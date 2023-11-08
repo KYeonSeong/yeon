@@ -1,0 +1,128 @@
+/* 전체 페이지 스타일 */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+/* 제목 스타일 */
+h1{
+  text-align: center;
+}
+
+/* 로그인 컨테이너 스타일 */
+#login {
+  width: 300px;
+  height: 500px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 3px solid #7D9D9C;
+}
+
+/* 로그인 폼 스타일 */
+.frmLogin {
+  text-align: center;
+}
+
+.frmLogin input[type="text"],
+.frmLogin input[type="password"] {
+  width: 80%;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 로그인 버튼 스타일 */
+.loginBtns {
+  background-color: #7D9D9C; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.loginBtns:hover {
+  background-color: #209bff; /* 더 밝은 주황색 */
+}
+
+/* 버튼 그룹 스타일 */
+.frmLogin button[type="button"] {
+  margin-right: 10px;
+  background-color: transparent;
+  border: none;
+  color: #7c7c7c;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.frmLogin button[type="button"]:hover {
+  text-decoration: underline;
+  color: #7D9D9C;
+}
+
+/* 로그인 옵션 목록 스타일 */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+ul li {
+  margin-right: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* 네이버, 카카오 로그인 스타일 */
+ul li span.naver {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: rgb(15, 255, 15);
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+ul li span.kakao {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: yellow;
+  font-weight: bolder;
+}
+
+/* 네이버, 카카오 로그인 스타일 호버 */
+ul li span.naver:hover {
+  background-color: #45ff2c;
+}
+ul li span.kakao:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+/* 이미지 스타일 */
+#login img {
+  display: block; 
+  margin: 0 auto;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.logoImage {
+  cursor: pointer;
+}

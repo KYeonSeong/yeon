@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faqModify</title>
+
+</head>
+
+<body>
+    <div>
+        <div class="sectionTitle">자주 묻는 질문</div>
+        <div class="sectionContentR">
+            <div class="form-group ">
+                <label class="col-form-label mt-4" for="inputDefault">제목</label>
+                <input type="text" class="form-control fmSub" placeholder="제목을 입력하세요" id="inputDefault"
+                th:value="${fmqv.subject}">
+            </div>
+            <div class="form-group fga">
+                <label for="exampleTextarea" class="form-label mt-4">내용</label>
+                <textarea class="faq_ta_modify form-control fmDoc" id="exampleTextarea" placeholder="FAQ"
+                th:text="${fmqv.doc}"></textarea>
+            </div>
+            <button type="button" id="centerBtn" class="faqModifyBtn btn btn-outline-secondary "
+                th:if="${session.id ne null and session.auth == 0}">수정</button>
+        </div>
+    </div>
+    <input type="hidden" th:value="${fmqv.sno}" class="fmqv_sno">
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자유글 상세보기</title>
+</head>
+<body>
+    <div id="freeView">
+        <form name="frmFree" class="frmFree" method="post">
+            <h2>
+                <div class="subject" th:text="${vo.subject}"/>
+            </h2>
+            <div class="freeViewList">
+                <output name="id">[[${vo.id}]]</output><br/>
+                <output name="nal">[[${vo.nal}]]</output>
+                <span>조회수</span>
+                <output name="hit">[[${vo.hit}]]</output>
+            </div>
+            <br/>
+            <div class="attZone">
+                <div th:each="att : ${vo.attFiles}">
+                    <img th:src="|/freeUpload/${att.sysFile}|" width="600px" height="400px">
+                </div>
+            </div>
+            <div class="doc" th:utext="${vo.doc}"></div>
+            <div class="btnZone">
+                <button type="button" class="goFreeModify" th:if="${session.id eq vo.id} or ${session.auth == 0}">수정</button>
+                <button type="button" class="btnFreeDelete" th:if="${session.id eq vo.id} or ${session.auth == 0}"><i class="fa-solid fa-trash-can"></i></button>
+                <button type="button" class="goFreeRegister" th:if="${session.id ne null}">글쓰기</button>
+                <button type="button" class="freeBtn"><i class="fa-solid fa-list"></i></button>
+            </div>
+            <input type="hidden" name="sno" th:value="${vo.sno}"/>
+            <input type="hidden" name="freePwd" class="freePwd" th:value="${vo.freePwd}"/>
+            <inpyt type="hidden" name="freeBoardSno" th:value="${vo.freeBoardSno}"/>
+            <input type="hidden" name="nowPage" th:value="${page.nowPage}"/>
+            <input type="hidden" name="findStr" th:value="${page.findStr}"/>
+        </form>
+    </div>
+    <hr/>
+    <div class="FreeReplies">
+        <div th:replace="~{/board/free/freeRepl :: fragment}"/>
+        <div th:replace="~{/board/free/freeReplView :: fragment}"/>
+    </div>
+    <div id="modal">
+        <div id="content">
+            <input type="button" value="X" class="btnClose">
+            <span>게시글 비밀번호를 입력하세요</span><br/>
+            <input type='password' class='pwdCheck'/>
+            <input type="button" value="입력" class="btnCheck"/>
+        </div>
+    </div>
+</body>
+</html>

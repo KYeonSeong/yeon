@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freeReplView</title>
+</head>
+<body>
+    <div id="freeReplView" th:fragment="fragment">
+        <div class="repl-container" th:each="repl : ${vo.replies}" th:attr="style=${'--repl-deep: ' + repl.deep}">
+            <!-- 화살표 아이콘 -->
+            <div class="arrow" th:if="${repl.deep > 0}">
+                <i class="fa-solid fa-arrow-turn-up fa-rotate-90"></i>
+            </div>
+            <form name="frmFreeReplView" class="replList" method="post">
+                <output name="id">[[${repl.id}]]</output><br/>
+                <textarea name="doc" class="doc" th:text="${repl.doc}" readonly placeholder="내용을 입력하세요"></textarea><br/>
+                <output name="nal">[[${repl.nal}]]</output>
+                <div class="replBtnZone">
+                    <button type="button" class="goFreeReplModify" th:if="${session.id eq repl.id} or ${session.auth == 0}"><i class="fa-solid fa-pen"></i></button>
+                    <button type="button" class="goFreeReplModifyCancel">취소</button>
+                    <button type="button" class="btnFreeReplModify">수정</button>
+                    <button type="button" class="btnFreeReplDelete">삭제</button>
+                    <button type="button" class="btnFreeReplReply" th:data-repl-sno="${repl.sno}" th:if="${session.id ne null}">답글 작성</button>
+                </div>
+                <input type="hidden" name="id" th:value="${repl.id}"/>
+                <input type="hidden" name="sno" th:value="${repl.sno}"/>
+                <input type="hidden" name="freeBoardSno" th:value="${repl.freeBoardSno}"/>
+                <input type="hidden" name="grp" th:value="${repl.grp}"/>
+                <input type="hidden" name="seq" th:value="${repl.seq}"/>
+                <input type="hidden" name="deep" th:value="${repl.deep}"/>
+                <input type="hidden" name="nal" th:value="${repl.nal}"/>
+            </form>
+            <div class="frmFreeReplR" style="display:none;" th:data-repl-sno="${repl.sno}">
+                <output name="id">[[${session.id}]]</output><br/>
+                <textarea class="doc" rows="3" placeholder="답글을 남겨보세요"></textarea>
+                <button type="button" class="btnFreeReplR">등록</button>
+
+                <input type="hidden" name="id" th:value="${session.id}"/>
+                <input type="hidden" name="freeBoardSno" th:value="${repl.freeBoardSno}"/>
+                <input type="text" name="sno" th:value="${repl.sno}"/>
+                <input type="hidden" name="grp" th:value="${repl.grp}"/>
+                <input type="hidden" name="seq" th:value="${repl.seq}"/>
+                <input type="hidden" name="deep" th:value="${repl.deep}"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+h3,
+h6,
+button {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* ================================Header==============================*/
+.mainHeader {
+    height: 20%;
+}
+
+.headerCss {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+    height: 200px;
+}
+
+.logo>img {
+    width: 300px;
+    height: 150px;
+}
+
+.bg-light {
+    height: 60px;
+}
+
+.d-flex {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    height: 50px;
+    width: 300px;
+    z-index: 999;
+}
+
+.nav-tabs {
+    position: absolute;    
+    bottom: 1px;
+    height: 50px;
+    width: 100%;
+}
+
+.searchBtn {
+    width: 100px;
+    cursor: pointer;
+}
+
+/* 색상 */
+
+.navbar-collapse.show {
+   z-index:2;
+}
+.nav-tabs .nav-link,
+.navbar-nav .nav-link {
+    color: #333;
+    cursor: pointer;
+    border: none;
+}
+
+/* 활성화된 탭 메뉴 배경색과 텍스트 색상 변경 */
+.nav-tabs .nav-link.active {
+    background-color: #ffffff;
+    color: #f37c61;
+    border: none;
+}
+
+.nav-tabs .nav-link:hover, .navbar-nav .nav-link:hover {
+    color: #f37c61;
+}
+
+
+/* 드롭다운 항목에 커스텀 스타일 적용 */
+.dropdown-menu .dropdown-item {
+    color: #666;
+}
+
+/* 드롭다운 항목 hover 상태에 커스텀 스타일 적용 */
+.dropdown-menu .dropdown-item:hover {
+    color: #f37c61;
+}
+
+
+
+/* ===========================Section============================ */
+.mainSection {
+    height: 80%;
+    background-color: #fff;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* 광고 */
+.mainSection .adBox {
+    width: 1200px;
+    height: 500px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.adBox .sliderBox img {
+    width: 100%;
+    height: 100%;
+}
+
+/* ======================전시 항목====================================== */
+.mainSection .artBox {
+    width: 1200px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 34.6px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 한 열에 4개의 열 생성 */
+}
+
+
+/* ====각각 생성될 박스==== */
+.artBox>.art {
+    height: 450px;
+    padding: 0 5px;
+    position: relative;
+}
+
+.artBox>.art img {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.artBox>.art img:hover {
+    transform: translate(0, -5px);
+    transition: transform 0.2s;
+    cursor:pointer;
+}
+
+/* ==박스 안의 글자 css== */
+.junsiLocation {
+    display: inline-block;
+    font-size: 0.8em;
+    width: 80px;
+    background-color: #e3e1dd;
+    border-radius: 10px;
+}
+
+.junsiPrice {
+    display: inline-block;
+    position: absolute;
+    right: 3px;
+    color: rgb(250, 58, 58);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.junsiPrice::after {
+    content: "원";
+    color: black;
+}
+
+.junsiName {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+
+
+/* ==========================Footer================================ */
+.mainFooter {
+    height: 20%;
+    overflow: hidden;
+}
+
+.p-4 {
+    width: 1200px;
+}
+
+
+.mb-1 {
+    cursor: pointer;
+}
+
+.mb-1:hover {
+    color: #f37c61;
+}
+
+.tog {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: end;
+    color: #4f4f4f;
+}
+
+.tog2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #4f4f4f;
+
+}
+
+.tog div {
+    padding: 0;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>        
+    <div class="customerDetailView" th:fragment="fragment">
+        <h1>상세내역</h1>
+        <hr>
+        <div class="ticketPriv" th:each="v:${tList}">
+            <div class="optionWrap">
+                <div class="viewTitle">
+                    <span>티켓명</span>
+                </div>
+                <div>
+                    <span th:text="${v.gallery_name}"></span><br>                                                                
+                </div>
+            </div>
+
+            <div class="optionWrap">
+                <div class="viewTitle">
+                    <span>주소</span>
+                </div>
+                <div>
+                    <span th:utext="${v.location_info}">
+                </div>
+            </div>
+
+            <div class="optionWrap">
+                <div class="viewTitle">
+                    <span>연락처</span>
+                </div>
+                <div>
+                    <span th:text="${v.tel}"></span><br>                    
+                </div>
+            </div>
+
+            <hr>
+            
+
+            <div class="optionWrap">
+                <div class="viewTitle">
+                    <span>옵션</span>
+                </div>
+                <div>
+                    <div th:if="${v.adultEa != 0}">
+                        <span th:text="'입장권 성인 &#58; (' + ${v.adultEa} + '매)'"></span>                        
+                    </div>
+                    <div th:if="${v.teenEa != 0}">
+                        <span th:text="'입장권 청소년 &#58; (' + ${v.teenEa} + '매)'"></span>                        
+                    </div>
+                    <div th:if="${v.kidEa != 0}">
+                        <span th:text="'입장권 아동 &#58; (' + ${v.kidEa} + '매)'"></span>                        
+                    </div>
+                      
+                    <div th:if="${v.totEa != 0}">
+                        <span th:text="'총수량 &#58; (' + ${v.totEa} + '매)'"></span>                        
+                    </div>                                          
+                </div>   
+            </div>
+
+            <div class="optionWrap">
+                <div class="viewTitle">
+                    <span>예매번호</span>
+                </div>
+                <div>
+                    <div class="viewTitle" th:each="n:${nList}">
+                        <span th:text="${n.tNum}"></span><br>                                            
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <hr>
+            <div class="ticketPrivWrap">
+                <div class="viewTitle">
+                    <span>이용자</span><br>
+                    <span>결제금액</span><br>
+                    <span>결제일시</span>
+                </div>
+                <div class="viewContent">
+                    <span th:text="${v.name}"></span><br>                    
+                    <span th:text="${#numbers.formatDecimal(v.totAmtStr, 0, 'COMMA', 0, 'POINT')}+원"></span><br>
+                    
+                    <span th:text="${v.payTime}"></span>
+                </div>
+            </div>
+
+            
+            
+        </div>
+        
+        
+    </div>
+
+</body>
+</html>

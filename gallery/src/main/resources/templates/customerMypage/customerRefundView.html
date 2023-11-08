@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>        
+    <div class="customerTicketView" th:fragment="fragment">
+        <h1>취소/환불내역</h1>
+        <div class="customerTicketView" th:fragment="fragment">   
+            <form name="frm">
+                <div class="ticketPrivTitle"  th:each="v:${tList}" th:if="${v.status eq 2}">
+                    <div class="payDate">
+                        <div>
+                            <input type="hidden" name="payNum" th:value="${v.payNum}">
+                            <input type="hidden" name="payTime" th:value="${v.payTime}">
+                            <input type="hidden" name="adultEa" th:value="${v.adultEa}">
+                            <input type="hidden" name="teenEa" th:value="${v.teenEa}">
+                            <input type="hidden" name="kidEa" th:value="${v.kidEa}">
+                            <input type="hidden" name="totEa" th:value="${v.totEa}">
+                            <span>구매자 : </span> 
+                            <span th:text="${v.name}"></span>
+                        </div>                               
+                        <span>결제일 : </span>
+                        <span class="nal" th:text="${v.payTime}"></span> / 
+                        <span>취소일 : </span>
+                        <span class="nal" th:text="${v.refundTime}"></span>
+                    </div>
+        
+                    <div class="ticketPrivContent">
+                        <div class="photo_pathZone">                    
+                            <img th:src="@{${v.photo_path}}">
+                        </div>
+        
+                        <div class="contentZone">
+                            <span th:text="${v.gallery_name}"></span><br>                 
+                            
+                            <div th:if="${v.adultEa != 0}">
+                                <span th:text="'입장권 성인 &#58; (' + ${v.adultEa} + '매)'"></span>                        
+                            </div>
+                            <div th:if="${v.teenEa != 0}">
+                                <span th:text="'입장권 청소년 &#58; (' + ${v.teenEa} + '매)'"></span>                        
+                            </div>
+                            <div th:if="${v.kidEa != 0}">
+                                <span th:text="'입장권 아동 &#58; (' + ${v.kidEa} + '매)'"></span>                        
+                            </div>
+                              
+                            <div th:if="${v.totEa != 0}">
+                                <span th:text="'총수량 &#58; (' + ${v.totEa} + '매)'"></span>
+                                / <span th:text="${#numbers.formatDecimal(v.totAmtStr, 0, 'COMMA', 0, 'POINT')}+원"></span>
+                                
+                            </div> 
+                        </div>
+                    </div>                
+                </div>
+    
+            </form>
+            
+        </div>    
+    </div>
+
+</body>
+</html>

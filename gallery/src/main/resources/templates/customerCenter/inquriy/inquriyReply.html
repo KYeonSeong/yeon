@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inquriyReply</title>
+
+</head>
+
+<body>
+    <div class="sectionTitle">1:1 문의 답변 달기</div>
+
+    <div class="sectionContentRR">
+        <div class="form-group fga">
+            <label for="exampleTextarea" class="form-label mt-4">답변 작성</label>
+            <textarea class="admin_ta form-control aDoc" id="exampleTextarea" placeholder="문의 답변"></textarea>
+            
+        </div>
+        <button type="button" id="centerBtn" class="adminRegisterBtn btn btn-outline-secondary "
+            th:if="${session.id ne null and session.auth == 0}">등록</button>
+    </div>
+    <div class="ivrsno" th:text="${sno}" hidden></div>
+
+</body>
+
+</html>

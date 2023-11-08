@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reviewReplView</title>
+</head>
+<body>
+    <div id="reviewReplView" th:fragment="fragment">
+        <div th:each="repl : ${vo.replies}">
+            <form name="frmReviewReplV" class="replList" method="post">
+                <output name="id">[[${repl.id}]]</output><br/>
+                <textarea name="doc" class="doc" th:text="${repl.doc}" readonly placeholder="내용을 입력하세요"></textarea><br/>
+                <output name="nal">[[${repl.nal}]]</output>
+                <div class="replBtnZone">
+                    <button type="button" class="goReviewReplModify" th:if="${session.id eq repl.id} or ${session.auth == 0}"><i class="fa-solid fa-pen"></i></button>
+                    <button type="button" class="goReviewReplModifyCancel">취소</button>
+                    <button type="button" class="btnReviewReplModify">수정</button>
+                    <button type="button" class="btnReviewReplDelete" th:if="${session.auth == 0}">삭제</button>
+                </div>
+                <input type="hidden" name="id" th:value="${repl.id}"/>
+                <input type="hidden" name="sno" th:value="${repl.sno}"/>
+                <input type="hidden" name="grp" th:value="${repl.grp}"/>
+                <input type="hidden" name="nal" th:value="${repl.nal}"/>
+            </form>
+        </div>
+        <input type="hidden" name="sno" th:value="${vo.sno}"/>
+        <input type="hidden" name="grp" th:value="${vo.grp}"/>
+    </div>
+</body>
+</html>

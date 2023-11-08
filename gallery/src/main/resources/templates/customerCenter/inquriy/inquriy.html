@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inquriy</title>
+
+</head>
+
+<body>
+    <form id="inquriyForm" name="inquriyForm">
+        <div class="sectionTitle">
+            1:1 문의
+        </div>
+        <div class="sectionContentP">
+            <div class="list_header i">
+                <span class="inquriyNo centerA">번호</span>
+                <span class="inquriySubject centerA headsub">제목</span>
+                <span class="inquriyName centerA">작성자</span>
+                <span class="inquriyDate centerA">작성일</span>
+                <span class="inquriyYN centerA" role="button">처리상태</span>
+            </div>
+            <div class="coco">
+                <div th:if="${session.id eq q.id or session.auth == 0}" id="lc" class="ilist_content i"
+                    th:each="q:${questionList}">
+                    <span th:text="${q.sno}" th:value="${q.sno}" class="iNo centerA"></span>
+                    <span th:text="${q.subject}" th:value="${q.subject}" class="iSub centerA contentsub"></span>
+                    <span th:text="${q.id}" th:value="${q.id}" class="iName centerA"></span>
+                    <span th:text="${q.nal}" th:value="${q.nal}" class="iDate centerA"></span>
+                    <span th:text="${q.status}" th:value="${q.status}" class="iStatus centerA"></span>
+                    <input type="hidden" th:value="${q.tel}" class="qtel"></span>
+                </div>
+            </div>
+            <button th:if="${session.id ne null and (session.auth == 1 or session.auth == 2) }" type="button"
+                id="centerBtn" class="inquriyRBtn btn btn-outline-secondary">문의 작성</button>
+        </div>
+        <input type="hidden" name="nowPage" th:value="${ipage.nowPage}">
+    </form>
+    <div class="page" th:if="${ipage.totSize > 0}">
+        <th:block th:if="${ipage.startPage} gt 1">
+            <button type="button" class="btn btn-outline-secondary btnFirst" value="1" onclick="imove(this.value)">
+                << </button>
+                    <button type="button" class="btnPrev btn btn-outline-secondary" th:value="${ipage.startPage-1}"
+                        onclick="imove(this.value)">
+                        < </button>
+        </th:block>
+        <th:block th:each="m : ${#numbers.sequence(ipage.startPage,ipage.endPage)}">
+            <button type="button" class="btnNow btn btn-outline-secondary"
+                th:classappend="${ipage.nowPage eq m ? 'active' : ''}" onclick="imove(this.value)" th:text="${m}"
+                th:value="${m}" />
+        </th:block>
+        <th:block th:if="${ipage.endPage lt ipage.totPage}">
+            <button type="button" class="btnNext btn btn-outline-secondary" th:value="${ipage.endPage+1}"
+                onclick="imove(this.value)"> > </button>
+            <button type="button" class="btnLast btn btn-outline-secondary" th:value="${ipage.totPage}"
+                onclick="imove(this.value)"> >> </button>
+        </th:block>
+    </div>
+
+</body>
+
+</html>

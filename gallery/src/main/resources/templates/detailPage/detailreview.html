@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detailreview</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script defer src="./js/detailindex.js"></script>
+    <link rel="stylesheet" href="./css/detailreview.css">
+</head>
+<body>
+    <div id="cssContainer">
+        <h2><strong>후기</strong></h2>
+        <br/>
+        <div class="reviewContainer" th:each="review:${reviewList}">
+            <div id="reviewId">[[${review.id}]]</div>
+            <div>[[${review.nal}]]</div>
+            <div name="review" class="review" th:text="${review.doc}"></div>
+            <br/>
+            <div class="attZone">
+                <div class="imgContainer" th:each="att : ${review.attFiles}">
+                    <img class="reviewImg" th:src="@{|/reviewUpload/${att.sysFile}|}" width="100px" height="150px">
+                    <input type="hidden" class="clickCount" value="0">
+                </div>
+            </div>          
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faqRegister</title>
+
+</head>
+
+<body>
+    <div>
+        <div class="sectionTitle">자주 묻는 질문</div>
+        <div class="sectionContentR">
+            <div class="form-group ">
+                <label class="col-form-label mt-4" for="inputDefault">제목</label>
+                <input type="text" class="form-control fSub" placeholder="제목을 입력하세요" id="inputDefault" maxlength="100">
+            </div>
+            <div class="form-group fga">
+                <label for="exampleTextarea" class="form-label mt-4">내용</label>
+                <textarea class="faq_ta form-control fDoc" id="exampleTextarea" placeholder="FAQ"></textarea>
+            </div>
+            <button type="button" id="centerBtn" class="faqRegisterBtn btn btn-outline-secondary "
+                th:if="${session.id ne null and session.auth == 0}">등록</button>
+        </div>
+    </div>
+</body>
+
+</html>

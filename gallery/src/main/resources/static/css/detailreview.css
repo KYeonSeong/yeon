@@ -1,0 +1,47 @@
+#cssContainer{
+    margin-top: 50px;
+}
+.reviewContainer{
+    border:none; 
+    width:1100px;  
+    height:100%;
+    background-color:#F0EBE3;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.reviewContainer div:nth-child(1){
+    float:left;
+}
+.reviewContainer div:nth-child(2){
+    float:right;
+}
+.reviewContainer div:nth-child(3){
+    clear:both;
+}
+#reviewId{
+    font-size:large;
+    font-weight:700;
+}
+.review{
+    width:600px;
+    height:100%;
+    /* background-color: rgb(85, 148, 100); */
+}
+.attZone{
+    border-radius: 10px;
+    width:100%;
+    height:100%;
+    display:flex;
+
+}
+.imgContainer{
+    flex-wrap: wrap;
+}
+.reviewImg{
+    margin-right: 10px;
+    width:155px;
+    height:170px;
+    border-radius: 15px;
+    cursor:pointer;
+}

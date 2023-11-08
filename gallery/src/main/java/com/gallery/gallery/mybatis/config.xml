@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+    <!--구매자,판매자 마이페이지-->
+    <typeAlias type="com.gallery.gallery.customer.CustomerVo"  alias="CustomerVo"/>
+    <typeAlias type="com.gallery.gallery.customer.CustomerDao" alias="CustomerDao"/>                
+    <typeAlias type="com.gallery.gallery.galleryPage.GalleryPageVo" alias="GalleryPageVo"/>
+    <typeAlias type="com.gallery.gallery.customer.TicketVo"  alias="TicketVo"/>
+    <typeAlias type="com.gallery.gallery.customer.TicketNumberVo"  alias="TicketNumberVo"/>
+    <typeAlias type="com.gallery.gallery.pay.PayVo" alias="PayVo"/>
+
+    <typeAlias type="com.gallery.gallery.seller.gellerylistVo" alias="gellerylistVo"/>
+    <typeAlias type="com.gallery.gallery.seller.SellerDao" alias="SellerDao"/>
+    <typeAlias type="com.gallery.gallery.seller.SellerVo" alias="SellerVo"/>
+    <typeAlias type="com.gallery.gallery.galleryUpload.GalleryPage" alias="GalleryPage"/>
+    
+    <!--상세페이지-->
+    <typeAlias type="com.gallery.gallery.detailPage.DetailPageVo" alias="DetailPageVo"/>
+    <typeAlias type="com.gallery.gallery.detailPage.QnaVo" alias="QnaVo"/>
+
+
+    <!--login-->
+    <typeAlias type="com.gallery.gallery.loginjava.LoginVo" alias="LoginVo"/>
+    <typeAlias type="com.gallery.gallery.joinjava.GeneralVo" alias="GeneralVo"/>
+    <typeAlias type="com.gallery.gallery.joinjava.CompanyVo" alias="CompanyVo"/>
+    
+    <!--고객센터-->
+    <typeAlias type="com.gallery.gallery.center.questionVo" alias="questionVo"/>
+    <typeAlias type="com.gallery.gallery.center.noticeVo" alias="noticeVo"/>
+    <typeAlias type="com.gallery.gallery.center.FAQVo" alias="FAQVo"/>
+
+    <!--게시판-->
+    <typeAlias type="com.gallery.gallery.board.FreeVo" alias="FreeVo"/>
+    <typeAlias type="com.gallery.gallery.board.FreeAtt" alias="FreeAtt"/>
+    <typeAlias type="com.gallery.gallery.board.FreeReply" alias="FreeReply"/>
+    <typeAlias type="com.gallery.gallery.board.FreePage" alias="page"/>
+
+    <typeAlias type="com.gallery.gallery.board.ReviewVo" alias="ReviewVo"/>
+    <typeAlias type="com.gallery.gallery.board.ReviewAtt" alias="ReviewAtt"/>
+    <typeAlias type="com.gallery.gallery.board.ReviewReply" alias="ReviewReply"/>
+    <typeAlias type="com.gallery.gallery.board.ReviewPage" alias="page2"/>
+
+    </typeAliases>
+
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/togallery"/>
+        <property name="username" value="hong"/>
+        <property name="password" value="1111"/>
+      </dataSource>
+    </environment>
+  </environments>
+
+
+  <mappers>
+    <mapper resource="com/gallery/gallery/mybatis/mypage.xml"/>
+    <mapper resource="com/gallery/gallery/mybatis/pay.xml"/>
+    <mapper resource="com/gallery/gallery/mybatis/ticket.xml"/>
+    
+    <mapper resource="com/gallery/gallery/mybatis/detailPage.xml"/>
+    <mapper resource="com/gallery/gallery/mybatis/galleryPage.xml"/>
+    <mapper resource="com/gallery/gallery/mybatis/sellerpage.xml"/>
+
+    <mapper resource="com/gallery/gallery/mybatis/login.xml"/>
+    <mapper resource="com/gallery/gallery/mybatis/join.xml"/>
+
+    <mapper resource="com/gallery/gallery/mybatis/center.xml"/>
+
+    <mapper resource="com/gallery/gallery/mybatis/free.xml"/>
+    <mapper resource="com/gallery/gallery/mybatis/review.xml"/>
+
+  </mappers>
+</configuration>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"><!--타임리프의 th속성을 사용하기 위해 선언된 네임스테이스이다.
+                                                        순수 HTML로만 이루어진 페이지인 경우 선언하지 않아도 된다.-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detailindex</title>
+    <link rel="stylesheet" href="./css/detailindex.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4d1a0401f5d71f5a39e93ba5eada55e9&libraries=services"></script>
+    <script defer src="./js/detailindex.js"></script>
+    <script defer src="./js/index.js"></script>
+    
+</head>
+<body>
+    <form name="frmIndex" id="frmIndex" method="post">        
+        <div id="miniInfo" th:each="g:${gList}">            
+            <input type="hidden" name="gallery_num" th:value="${g.gallery_num}">
+            <input type="hidden" name="location" th:value="${g.location}">
+            <input type="hidden" name="company" th:value="${g.company}">
+            <input type="hidden" name="id" th:value="${session.id}">
+            <input type="hidden" name="checkLogin" class="checkLogin" th:value="${session.checkLogin}">
+            <img id="img" th:src="@{${g.photo_path}}">
+            <div id="option">
+                <span>옵션선택</span><br/>
+                <button type="button" id="btnOption" name="gallery_name">[[${g.gallery_name}]]</button><br/>
+                <span>권종선택</span><br/>
+                <div id="ticketType">
+                    <button type="button" class="price" id="adult_price">
+                        <div>성인</div>
+                        <input type="text" class="adult_price" name="adult_price" th:value="${g.adult_price}" readonly/>원
+                    </button>
+                    <button type="button" class="price" id="teen_price">
+                        <div>청소년</div>
+                        <input type="text" class="teen_price" name="teen_price" th:value="${g.teen_price}" readonly/>원
+                    </button>
+                    <button type="button" class="price" id="kid_price">
+                        <div>어린이</div>
+                        <input type="text" class="kid_price" name="kid_price" th:value="${g.kid_price}" readonly/>원
+                    </button>
+                </div>
+
+                <span id="ticketEa">수량선택</span>
+                <div id="selectEa1">
+                    <div>성인</div>
+                    <button type="button" class="minus">-</button>
+                    <input type="text" class="adultEa" id="adultEa" name="adultEa" value="0" readonly/>
+                    <button type="button" class="plus">+</button>
+                    <input type="text" class="adultAmt" name="adultAmt" readonly><span>원</span>                    
+                </div>
+
+                <div id="selectEa2">  
+                    <div>청소년</div>  
+                    <button type="button" class="minus">-</button>
+                    <input type="text" class="teenEa" id="teenEa" name="teenEa" value="0" readonly/>
+                    <button type="button" class="plus">+</button>
+                    <input type="text" class="teenAmt" name="teenAmt" readonly><span>원</span>
+                </div>
+
+                <div id="selectEa3">   
+                    <div>어린이</div> 
+                    <button type="button" class="minus">-</button>
+                    <input type="text" class="kidEa" id="kidEa" name="kidEa" value="0" readonly/>
+                    <button type="button" class="plus">+</button>
+                    <input type="text" class="kidAmt" name="kidAmt" readonly><span>원</span>    
+                </div>
+                
+                <input type="hidden" class="totEa" name="totEa">
+                <span class="viewTotAmt">총 결제금액
+                <input type="text" class="totAmt" name="totAmt" readonly>원</span>
+                <br>
+                <button type="button" id="btnPayment">결제하기</button>
+            </div>
+        </div>    
+        <div id="container">
+            <div id="btnDetailZone">                
+                <button type="button" id="btnInfo">안내</button>
+                <button type="button" id="btnReview">후기</button>
+                <button type="button" id="btnQNA">Q&A</button>
+                <button type="button" id="btnLocation">장소</button>
+                <button type="button" id="btnRefund">환불규정</button>
+            </div>
+            <hr/>
+            <div id="result"></div>
+        </div>        
+    </form>
+</body>
+</html>

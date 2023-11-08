@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GalleryApplication<gallery>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.gallery.gallery.GalleryApplication",
+            "projectName": "gallery",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

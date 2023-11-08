@@ -1,0 +1,1089 @@
+/*----------------------전체 Section 영역----------------------*/
+.boardSectionBack{
+    height:auto;
+    min-height:100vh;
+    background-color:#7D9D9C;
+    display:grid;
+    align-items:center;
+    justify-content:center;
+}
+
+.boardTotSection{
+    height:auto;
+    min-height:100vh;
+    margin-top:10%;
+    margin-bottom:10%;
+    width:1200px;
+    display:grid;
+    grid-template-columns:0.6fr 2.4fr;
+    gap:20px;
+}
+
+@media(max-width:1000px){
+    .boardTotSection{
+        width:auto;
+        display:grid;
+        grid-template-columns:0.6fr 2.4fr;
+        gap:20px;
+    }
+}
+
+/*----------------------Aside 영역----------------------*/
+.boardAside{
+    background-color:#F0EBE3;
+    border-radius:20px;
+    height:30vh;
+    position:sticky;
+    width:100%;
+}
+
+.boardAside .asideTitle{
+    padding:50px 30px 30px 30px;
+    font-size:1.5em;
+    font-weight:bold;
+    color:#576F72;
+}
+
+.boardAsideBtn{
+    margin-top:20px;
+}
+
+.boardAsideBtn button[type=button]{
+    width:100%;
+    padding-left:30px;
+    height:40px;
+    text-align:left;
+    border:none;
+    font-size:1.2em;
+    cursor:pointer;
+    white-space:nowrap;
+    color:#7D9D9C;
+    font-weight:bolder;
+}
+
+.boardAsideBtn button[type=button]:hover{
+    padding-left:20px;
+    cursor:pointer;
+    font-weight:bold;
+    color:#576F72;
+}
+
+/*----------------------전체 Section 영역----------------------*/
+.boardSection{
+    background-color:#F0EBE3;
+    border-radius:20px;
+    position:relative;
+    padding-bottom:0%;
+    width:100%;
+}
+
+/*-------textarea 선 누르면 보이는 속성 없애기-------*/
+textarea{
+    outline:none;
+    border:none;
+}
+
+/*-------------------------------------------자유 게시판-------------------------------------------*/
+/*-------------------------목록-------------------------*/
+#freeBoard h1{
+    padding:24px 30px 15px 30px;
+    font-size:1.5em;
+    font-weight:bold;
+    color:#576F72;
+}
+
+#freeBoard .frmFree{
+    text-align:right;
+    margin-right:15px;
+}
+
+#freeBoard .frmFree .findStr{
+    padding:7px;
+    border:1px solid #7D9D9C;
+    border-radius:7px;
+    width:40%;
+    background-color:#F0EBE3;
+}
+
+#freeBoard .frmFree .btnFreeFind{
+    background-color:#7D9D9C;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    padding:7px 12px;
+}
+
+#freeBoard .frmFree .btnFreeFind:hover{
+    background-color:#576F72;
+}
+
+.freeList {
+    margin:35px auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.freeList .title{
+    background-color:#7D9D9C;
+    display:flex;
+    font-weight:1000;
+    font-size:1.2em;
+    color:#fff;
+    width:820px;
+    border-radius:5px;
+}
+
+.freeList .title span:nth-child(1){width:80px; line-height:4.5vh; text-align:center;}
+.freeList .title span:nth-child(2){width:460px; line-height:4.5vh; text-align:center;}
+.freeList .title span:nth-child(3){width:100px; line-height:4.5vh; text-align:center;}
+.freeList .title span:nth-child(4){width:100px; line-height:4.5vh; text-align:center;}
+.freeList .title span:nth-child(5){width:80px; line-height:4.5vh; text-align:center;}
+
+.freeList .item{
+    display:flex;
+    width:820px;
+    border-bottom:1px solid #7D9D9C;
+}
+
+.freeList .item:hover{
+    background-color:#f8f9fb;
+    cursor:pointer;
+}
+
+.freeList .item span:nth-child(1){width:80px; line-height:5vh; text-align:center;}
+.freeList .item span:nth-child(2){width:460px; line-height:5vh; text-align:left;}
+.freeList .item span:nth-child(3){width:100px; line-height:5vh; text-align:center;}
+.freeList .item span:nth-child(4){width:100px; line-height:5vh; text-align:center;}
+.freeList .item span:nth-child(5){width:80px; line-height:5vh; text-align:center;}
+
+/* 페이지 버튼 스타일 */
+#freeBoard .page{
+    margin-top:20px;
+    text-align:center;
+}
+
+.page button{
+    background-color:#7D9D9C;
+    border:1px solid #ccc;
+    color:#fff;
+    padding:5px 10px;
+    margin:0 5px;
+    border-radius:7px;
+    cursor:pointer;
+    transition:background-color 0.3s;
+}
+
+.page button:hover{
+    background-color:#576F72;
+}
+
+/* 글쓰기 버튼 스타일 */
+#freeBoard .btnZone{
+    text-align:right;
+    margin-right:20px;
+}
+
+#freeBoard .goFreeRegister{
+    background-color:#7D9D9C;
+    color:#fff;
+    border:none;
+    border-radius:7px;
+    padding:10px 20px;
+}
+
+#freeBoard .goFreeRegister:hover{
+    background-color:#576F72;
+}
+
+
+/*-------------------------글 작성-------------------------*/
+#freeRegister{
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    align-items:center; /*가로 비율 가운데*/
+    justify-content:center; /*세로 비율 가운데*/
+    height:100vh;
+}
+
+#freeRegister .frmFree{
+    width:90%;
+    max-height:100%;
+    padding:20px;
+    border-radius:10px;
+}
+
+#freeRegister h2{
+    font-size:1.5em;
+    margin-bottom:20px;
+    font-weight:bolder;
+    color:#354346;
+}
+
+#freeRegister span{
+    font-weight:bold;
+    color:#354346;
+}
+
+#freeRegister input[name="subject"]{
+    width:100%;
+    padding:8px;
+    margin-bottom:10px;
+    border:1px solid #7D9D9C;
+    border-radius:5px;
+    background-color:#f3f0eb;
+}
+
+#freeRegister .doc{
+    width:100%;
+    min-height:55vh;
+    padding:10px;
+    border:1px solid #7D9D9C;
+    border-radius:7px;
+    resize:none;
+    background-color:#f3f0eb;
+}
+
+#freeRegister input[name="freePwd"]{
+    width:30%;
+    padding:8px;
+    margin-top:3px;
+    margin-bottom:3px;
+    border:1px solid #7D9D9C;
+    border-radius:5px;
+    background-color:#f3f0eb;
+}
+
+#freeRegister .fileUpload{
+    color:#354346;
+}
+
+#freeRegister .btnZone{
+    text-align:right;
+    margin-top:10px;
+}
+
+#freeRegister .btnZone button{
+    margin-left:6px;
+    padding:10px 20px;
+    background-color:#7D9D9C;
+    color:#fff;
+    border:none;
+    border-radius:7px;
+    font-weight:bolder;
+}
+
+#freeRegister button:hover{
+    background-color:#576F72;
+}
+
+@media(max-width:768px){
+    #freeRegister .frmFree{
+        padding:10px;
+    }
+}
+
+/*-------------------------상세보기-------------------------*/
+#freeView{
+    width:100%;
+    margin:20px auto;
+    padding:20px;
+}
+
+#freeView .subject{
+    font-size:1.3em;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+#freeView .freeViewList{
+    font-size:0.9em;
+    color:#777;
+    margin-left:8px;
+    margin-bottom:15px;
+}
+
+#freeView .freeViewList output[name="nal"]{
+    margin-right:15px;
+}
+
+#freeView .attZone{
+    margin-bottom:15px;
+    text-align:center;
+}
+
+#freeView .attZone img{
+    margin-bottom:8px;
+}
+
+#freeView .doc{
+    font-size:1.1em;
+    margin-left:20px;
+    margin-bottom:20px;
+    white-space:pre-wrap;
+}
+
+#freeView .btnZone{
+    text-align:right;
+    margin-top:20px;
+}
+
+#freeView .btnZone button{
+    margin-left:6px;
+    padding:10px 20px;
+    background-color:#7D9D9C;
+    color:#fff;
+    border:none;
+    border-radius:7px;
+    font-weight:bolder;
+}
+
+#freeView .btnZone button:hover{
+    background-color:#576F72;
+}
+
+/*-------------------------수정-------------------------*/
+#freeModify{
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    align-items:center; /*가로 비율 가운데*/
+    justify-content:center; /*세로 비율 가운데*/
+    height:100vh;
+}
+
+#freeModify .frmFree{
+    width:90%;
+    padding:20px;
+    border-radius:10px;
+}
+
+#freeModify span{
+    font-weight:bold;
+    color:#354346;
+}
+
+#freeModify input[name="subject"]{
+    width:100%;
+    padding:8px;
+    margin-bottom:10px;
+    border:1px solid #7D9D9C;
+    border-radius:5px;
+    background-color:#f3f0eb;
+}
+
+#freeModify .doc{
+    width:100%;
+    min-height:55vh;
+    padding:10px;
+    border:1px solid #7D9D9C;
+    border-radius:7px;
+    resize:none;
+    background-color:#f3f0eb;
+}
+
+#freeModify .frmFree .delAttFile{
+    margin-top:10px;
+    margin-left:15px;
+    width:500px;
+    padding:10px;
+}
+
+#freeModify .frmFree .fileUpload{
+    color:#354346;
+}
+
+#freeModify .btnZone{
+    text-align:right;
+    margin-top:20px;
+}
+
+#freeModify .btnZone button{
+    margin-left:6px;
+    padding:10px 20px;
+    background-color:#7D9D9C;
+    color:#fff;
+    border:none;
+    border-radius:7px;
+    font-weight:bolder;
+}
+
+#freeModify button:hover{
+    background-color:#576F72;
+}
+
+@media (max-width: 768px){
+    #freeModify .frmFree{
+        padding:10px;
+    }
+}
+
+/*-------------------------modal-------------------------*/
+#modal{
+    display:none;
+    z-index:1;
+    background-color:rgba(0, 0, 0, 0.4);
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    align-items:center;
+    justify-content:center;
+}
+
+#modal>#content{
+    width:400px;
+    padding:20px;
+    margin:100px auto;
+    position:relative;
+    background-color: #fff;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#modal .btnClose{
+    position: absolute;
+    top:10px;
+    right:10px;
+    font-size:20px;
+    border:0;
+    background-color:transparent;
+    color:#999;
+    cursor:pointer;
+}
+
+#modal .btnClose:hover,
+#modal .btnClose:focus{
+    color:#ff1e1e;
+    text-decoration:none;
+}
+
+#modal span{
+    display:block;
+    font-weight:bold;
+}
+
+#modal .pwdCheck{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    margin-bottom:8px;
+}
+
+#modal .btnCheck{
+    display:block;
+    width:100%;
+    padding:10px;
+    background-color:#7D9D9C;
+    border: none;
+    border-radius:10px;
+    color:#fff;
+    font-size:1.08em;
+    cursor:pointer;
+}
+
+#modal .btnCheck:hover{
+    background-color:#576F72;
+}
+
+/*-------------------------댓글 작성-------------------------*/
+/*댓글 작성 폼*/
+#freeRepl{
+    width:94vh;
+    padding:10px;
+    background-color:#f3f0eb;
+    border:1px solid #7D9D9C;
+    border-radius:15px;
+    box-shadow:0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top:20px;
+    margin-left:18px;
+}
+#freeRepl .frmFreeRepl{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+#freeRepl .frmFreeRepl output{
+    font-weight:bolder;
+}
+
+#freeRepl .frmFreeRepl .doc{
+    width:100%;
+    border:none;
+    resize:none;
+    background-color:#f3f0eb;
+}
+
+#freeRepl .frmFreeRepl .btnFreeRepl{
+    align-self:flex-end;
+    margin-top:10px;
+    padding:6px 10px;
+    background-color:#7D9D9C;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+#freeRepl .frmFreeRepl .btnFreeRepl:hover{
+    background-color:#576F72;
+}
+
+/*답글 작성 폼*/
+.frmFreeReplR{
+    width:60vh;
+    float:left;
+    margin-left:calc(var(--repl-deep) * 40px);
+    margin-top:8px;
+    padding:10px;
+    background-color:#F0EBE3;
+}
+
+.frmFreeReplR output{
+    margin-left:4px;
+    font-size:0.8em;
+}
+
+.frmFreeReplR output[name="id"]{
+    font-weight:bold;
+}
+
+.frmFreeReplR .doc{
+    width:100%;
+    padding:3px;
+    border:none;
+    resize:none;
+    background-color:#F0EBE3;
+}
+
+.frmFreeReplR button {
+    float:right; /* 버튼을 오른쪽으로 배치 */
+    padding:5px 10px;
+    background-color:#7D9D9C;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    font-weight:bolder;
+    cursor:pointer;
+}
+
+.frmFreeReplR button:hover {
+    background-color:#576F72;
+}
+
+/* 댓글 리스트 */
+#freeReplView{
+    width:100%;
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+#freeReplView .frmReplReplRView{
+    width:100%;
+    background-color:#F0EBE3;
+    border-bottom:1px solid #7D9D9C;
+}
+#freeReplView .arrow{
+    position:absolute;
+    left:-25px; /* 화살표를 왼쪽에 위치시키기 위한 값 */
+    top:10%; /* 위쪽으로 50% 위치 조정 */
+    transform:translateY(-50%); /* 위쪽으로 50% 만큼 이동해서 수직 중앙 정렬 */
+    width:20px; /* 아이콘 너비 */
+    height:20px; /* 아이콘 높이 */
+}
+#freeReplView .replList{
+    width:60vh;
+    padding:10px;
+    position: relative;
+    padding-left:20px;
+    margin-left:calc(var(--repl-deep) * 40px); /* deep 값에 따른 여백 계산 */
+}
+
+#freeReplView .replList output{
+    margin-left:4px;
+    font-size:0.8em;
+}
+
+#freeReplView .replList output[name="id"]{
+    font-weight:bold;
+}
+
+#freeReplView .replList .doc{
+    width:98%;
+    border:none;
+    resize:none;
+    margin-top:8px;
+    padding:4px;
+    background-color:#F0EBE3;
+}
+
+/* 수정하기 버튼 스타일 수정 */
+#freeReplView .replList .replBtnZone{
+    margin-top:5px;
+    margin-right:5px;
+    text-align:left;
+    margin-bottom:5px;
+}
+
+#freeReplView .replList .replBtnZone button{
+    background-color:#F0EBE3;
+    color:#7D9D9C;
+    border:none;
+    padding:5px 10px;
+    cursor:pointer;
+    margin-right:7px;
+    border-radius:7px;
+    font-weight:bolder;
+}
+
+#freeReplView .replList .replBtnZone button:hover{
+    color:#576F72;
+}
+
+/*-------------------------------------------후기 게시판-------------------------------------------*/
+
+/*목록*/
+#reviewBoard h1{
+    padding:24px 30px 15px 30px;
+    font-size:1.5em;
+    font-weight:bold;
+    color:#576F72;
+}
+
+#reviewBoard .frmReview{
+    text-align:right;
+    margin-right:15px;
+}
+
+#reviewBoard .frmReview .findStr{
+    padding:7px;
+    border:1px solid #7D9D9C;
+    border-radius:7px;
+    width:40%;
+    background-color:#F0EBE3;
+}
+
+#reviewBoard .frmReview .btnReviewFind{
+    background-color:#7D9D9C;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    padding:7px 12px;
+}
+
+#reviewBoard .frmReview .btnReviewFind:hover{
+    background-color:#576F72;
+}
+
+.reviewList{
+    margin:35px auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.reviewList .title{
+    background-color:#7D9D9C;
+    display:flex;
+    font-weight:1000;
+    font-size:1.2em;
+    color:#fff;
+    width:850px;
+    border-radius:5px;
+}
+
+.reviewList .title span:nth-child(1){width:70px; line-height:4.5vh; text-align:center;}
+.reviewList .title span:nth-child(2){width:430px; line-height:4.5vh; text-align:center;}
+.reviewList .title span:nth-child(3){width:100px; line-height:4.5vh; text-align:center;}
+.reviewList .title span:nth-child(4){width:100px; line-height:4.5vh; text-align:center;}
+.reviewList .title span:nth-child(5){width:70px; line-height:4.5vh; text-align:center;}
+.reviewList .title span:nth-child(6){width:70px; line-height:4.5vh; text-align:center;}
+
+.reviewList .item{
+    display:flex;
+    width:850px;
+    border-bottom:1px solid #7D9D9C;
+}
+
+.reviewList .item:hover{
+    background-color:#f8f9fb;
+    cursor:pointer;
+}
+
+.reviewList .item span:nth-child(1){width:70px; line-height:5vh; text-align:center;}
+.reviewList .item span:nth-child(2){width:430px; line-height:5vh; text-align:left;}
+.reviewList .item span:nth-child(3){width:100px; line-height:5vh; text-align:center;}
+.reviewList .item span:nth-child(4){width:100px; line-height:5vh; text-align:center;}
+.reviewList .item span:nth-child(5){width:70px; line-height:5vh; text-align:center;}
+.reviewList .item span:nth-child(6){width:70px; line-height:5vh; text-align:center;}
+
+/* 페이지 버튼 스타일 */
+#reviewBoard .page2{
+    margin-top:20px;
+    text-align:center;
+}
+
+.page2 button{
+    background-color:#7D9D9C;
+    border:1px solid #ccc;
+    color:#fff;
+    padding:5px 10px;
+    margin:0 5px;
+    border-radius:7px;
+    cursor:pointer;
+    transition:background-color 0.3s;
+}
+
+.page2 button:hover{
+    background-color:#576F72;
+}
+
+/* 글쓰기 버튼 스타일 */
+#reviewBoard .btnZone{
+    text-align:right;
+    margin-right:20px;
+}
+
+#reviewBoard .goReviewRegister{
+    background-color:#7D9D9C;
+    color:#fff;
+    border:none;
+    border-radius:7px;
+    padding:10px 20px;
+}
+
+#reviewBoard .goReviewRegister:hover{
+    background-color:#576F72;
+}
+
+/*-------------------------*글 작성-------------------------**/
+#reviewRegister{
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    align-items:center; /*가로 비율 가운데*/
+    justify-content:center; /*세로 비율 가운데*/
+    height:100vh;
+}
+
+#reviewRegister .frmReview{
+    width:90%;
+    max-height:100%;
+    padding:20px;
+    border-radius:10px;
+}
+
+#reviewRegister h2{
+    font-size:1.5em;
+    margin-bottom:20px;
+    font-weight:bolder;
+    color:#354346;
+}
+
+#reviewRegister span{
+    font-weight:bold;
+    color:#354346;
+}
+
+#reviewRegister .payNum{
+    line-height:37px;
+    margin-bottom:6px;
+    border:1px solid #7D9D9C;
+    border-radius:5px;
+    padding:8px;
+    background-color:#f3f0eb;
+    color:#354346;
+    font-weight:400;
+}
+
+#reviewRegister .payNum option{
+    line-height:35px;
+    color:#354346;
+    background-color:#f3f0eb;
+    text-align:left;
+}
+
+#reviewRegister input[name="subject"]{
+    width:100%;
+    padding:8px;
+    margin-bottom:10px;
+    border:1px solid #7D9D9C;
+    border-radius:5px;
+    background-color:#f3f0eb;
+}
+
+#reviewRegister .doc{
+    width:100%;
+    min-height:55vh;
+    padding:10px;
+    border:1px solid #7D9D9C;
+    border-radius:7px;
+    resize:none;
+    background-color:#f3f0eb;
+}
+
+#reviewRegister .btnZone{
+    text-align:right;
+    margin-top:20px;
+}
+
+#reviewRegister .btnZone button{
+    margin-left:6px;
+    padding:10px 20px;
+    background-color:#7D9D9C;
+    color:#fff;
+    border:none;
+    border-radius:7px;
+    font-weight:bolder;
+}
+
+#reviewRegister button:hover{
+    background-color:#576F72;
+}
+
+@media (max-width:768px){
+    #reviewRegister .frmReview{
+        padding:10px;
+    }
+}
+
+/*-------------------------상세보기-------------------------*/
+#reviewBoardView{
+    max-width:100%;
+    margin:20px auto;
+    padding:20px;
+}
+
+#reviewBoardView .subject{
+    font-size:1.3em;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+#reviewBoardView .reviewViewList{
+    font-size:0.9em;
+    color:#777;
+    margin-left:8px;
+    margin-bottom:15px;
+}
+
+#reviewBoardView .reviewViewList output[name="nal"]{
+    margin-right:15px;
+}
+
+#reviewBoardView .attZone{
+    margin-bottom:15px;
+    text-align:center;
+}
+
+#reviewBoardView .attZone img{
+    margin-bottom:8px;
+}
+
+#reviewBoardView .doc{
+    font-size:1.1em;
+    margin-left:20px;
+    margin-bottom:20px;
+    white-space:pre-wrap;
+}
+
+#reviewBoardView .btnZone{
+    text-align:right;
+    margin-top:20px;
+}
+
+#reviewBoardView .btnZone button{
+    margin-left:6px;
+    padding:10px 20px;
+    background-color:#7D9D9C;
+    color:#fff;
+    border:none;
+    border-radius:7px;
+    font-weight:bolder;
+}
+
+#reviewBoardView .btnZone button:hover{
+    background-color:#576F72;
+}
+
+/*-------------------------수정-------------------------*/
+#reviewModify{
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    align-items:center; /*가로 비율 가운데*/
+    justify-content:center; /*세로 비율 가운데*/
+    height:100vh;
+}
+
+#reviewModify .frmReview{
+    width:90%;
+    padding:20px;
+    border-radius:10px;
+}
+
+#reviewModify span{
+    font-weight:bold;
+    color:#354346;
+}
+
+#reviewModify input[name="subject"]{
+    width:100%;
+    padding:8px;
+    margin-bottom:10px;
+    border:1px solid #7D9D9C;
+    border-radius:5px;
+    background-color:#f3f0eb;
+}
+
+#reviewModify .doc{
+    width:100%;
+    min-height:55vh;
+    padding:10px;
+    border:1px solid #7D9D9C;
+    border-radius:7px;
+    resize:none;
+    background-color:#f3f0eb;
+}
+
+#reviewModify .frmReview .delAttFile{
+    margin-top:10px;
+    margin-left:15px;
+    width:500px;
+    padding:10px;
+}
+
+#reviewModify .frmReview .fileUpload{
+    color:#354346;
+}
+
+#reviewModify .btnZone{
+    text-align:right;
+    margin-top:20px;
+}
+
+#reviewModify .btnZone button{
+    margin-left:6px;
+    padding:10px 20px;
+    background-color:#7D9D9C;
+    color:#fff;
+    border:none;
+    border-radius:7px;
+    font-weight:bolder;
+}
+
+#reviewModify button:hover{
+    background-color:#576F72;
+}
+
+@media (max-width: 768px){
+    #reviewModify .frmReview{
+        padding:10px;
+    }
+}
+
+/*-------------------------댓글 작성-------------------------*/
+#reviewRepl{
+    width:94vh;
+    padding:10px;
+    background-color:#f3f0eb;
+    border:1px solid #7D9D9C;
+    border-radius:15px;
+    box-shadow:0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top:20px;
+    margin-left:18px;
+}
+
+#reviewRepl .frmReviewRepl{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+#reviewRepl .frmReviewRepl output{
+    font-weight:bolder;
+}
+
+#reviewRepl .frmReviewRepl .doc{
+    width:100%;
+    border:none;
+    resize:none;
+    background-color:#f3f0eb;
+}
+
+#reviewRepl .frmReviewRepl .btnReviewRepl{
+    align-self:flex-end;
+    margin-top:10px;
+    padding:6px 10px;
+    background-color:#7D9D9C;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+#reviewRepl .frmReviewRepl .btnReviewRepl:hover{
+    background-color:#576F72;
+}
+
+/*-------------------------댓글 리스트-------------------------*/
+#reviewReplView{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+#reviewReplView .frmReviewReplView{
+    width:100%;
+    background-color:#F0EBE3;
+    border-bottom:1px solid #7D9D9C;
+}
+
+#reviewReplView .replList{
+    margin-left:20px;
+}
+
+#reviewReplView .replList output{
+    margin-left:4px;
+    font-size:0.8em;
+}
+
+#reviewReplView .replList output[name="id"]{
+    font-weight:bold;
+}
+
+#reviewReplView .replList .doc{
+    width:98%;
+    resize:none;
+    margin-top:8px;
+    padding:4px;
+    background-color:#F0EBE3;
+}
+
+/* 수정하기 버튼 스타일 수정 */
+#reviewReplView .replList .replBtnZone{
+    margin-top:5px;
+    text-align:right;
+    margin-bottom:5px;
+}
+
+#reviewReplView .replList .replBtnZone button{
+    background-color:#F0EBE3;
+    color:#7D9D9C;
+    border:none;
+    padding:5px 10px;
+    cursor:pointer;
+    margin-right:7px;
+    border-radius:7px;
+    font-weight:bolder;
+}
+
+#reviewReplView .replList .replBtnZone button:hover{
+    color:#576F72;
+}

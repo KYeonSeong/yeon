@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mainHeader</title>
+</head>
+
+<body>
+  <header class="mainHeader" th:fragment="fragment">
+    <div class="headerCss">
+      <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light" style="height: 40px;">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+            aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active logoBtn">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link loginBtn" th:if="${session.id eq null}">로그인</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btnLogout" th:if="${session.id ne null}">로그아웃</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link signBtn" th:if="${session.id eq null}">회원가입</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link myPageBtn" th:if="${session.id ne null and session.auth != 0}">마이페이지</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">게시판</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item freeBtn">자유 게시판</a>
+                  <a class="dropdown-item reviewBtn">후기 게시판</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">고객센터</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item noticeBtn">공지사항</a>
+                  <a class="dropdown-item FAQBtn">자주 묻는 질문</a>
+                  <a class="dropdown-item inquriyBtn" th:if="${session.id ne null}">1:1 문의</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="logo" role="button">
+        <img src="/adimage/ToGallery-logo.png" class="logoBtn">
+      </div>
+      <div class="d-flex">
+        <input class="form-control me-sm-2 searchBox" type="search" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0 searchBtn" type="submit">검색</button>
+      </div>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active logoBtn" data-bs-toggle="tab" aria-selected="true" role="tab">전시</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link freeBtn" data-bs-toggle="tab" aria-selected="false" tabindex="-1" role="tab">게시판</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link myPageBtn" th:if="${session.id ne null and session.auth != 0}" data-bs-toggle="tab" aria-selected="false"
+            tabindex="-1" role="tab">마이페이지</a>
+        </li>
+      </ul>
+      <a href="#goBottom" style="display:scroll; position:fixed; bottom:30px; right: 30px; opacity: 1;
+      transition: opacity 0.3s ease-in-out;" id="scrollDownBtn"><i class="fa-solid fa-circle-down fa-2xl"
+          style="color: #c5c9ce;"></i></a>
+    </div>
+  </header>
+
+</body>
+
+
+</html>

@@ -1,0 +1,157 @@
+/* ============================마이페이지============================= */
+
+
+/*마이페이지 customerIndex.html*/
+.sellerMypage {
+    width: 1200px;
+    height: auto;
+    margin: 10px auto;
+}
+
+/*customerMypage_top*/
+/*마이페이지 상단*/
+
+.sellerMypage_top {
+    width: auto;
+    height: 130px;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid #ff6060;
+    border-radius: 10px;
+}
+
+.sellerMypage_top_left {
+    float: left;
+    background: #ff6060;
+    width: 240px;
+    height: 130px;
+    border-radius: 8px 0 0 8px;
+}
+
+/*상단틀*/
+.sellerMypage_top_right {
+    width: auto;
+    height: 110px;
+    padding: 10px 0;
+    background: #fff;
+    border-radius: 10px 10px 10px 10px;
+    line-height: 200%;
+}
+
+/*상단내용*/
+.sellerrMypage_top_contents {
+    float: left;
+    width: 160px;
+    height: 65px;
+    padding: 22px 20px;
+    border-right: 1px solid #ddd;
+}
+
+
+
+
+/* customerSection */
+/* 마이페이지 섹션영역 */
+.sellerMypage_wrap {
+    display: flex;
+    height: 640px;
+    margin: auto;
+}
+
+
+
+/* 마이페이지 왼쪽*/
+.sellerMypage_left_wrap {
+    float: left;
+    width: 180px;
+    height: auto;
+    padding: 40px 30px 0 30px;
+    background: #d1cfcf;
+    border-radius: 10px;
+}
+
+.sellerMypage_left_wrap ul {
+    list-style: none;
+    border-top: 1px solid #080808;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.sellerMypage_left_title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #555;
+}
+
+.sellerMypage_left_sub {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+
+
+
+/*마이페이지 오른쪽*/
+.sellerMypage_right_wrap {
+    width: 900px;
+    padding: 0 30px 0 30px;
+    background: #f1efef;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+/* ticketView
+
+.ticketPrivTitle{
+    border:1px solid rgb(184, 181, 181);
+    border-radius: 10px;
+    height: 250px;    
+} */
+.payDate{
+    text-align: right;        
+    padding-right: 20px;
+    border-bottom: 1px solid  rgb(184, 181, 181);
+    font-size: 20px;
+    font-weight: 1000;
+}
+.ticketPrivContent{
+    display: flex;    
+}
+
+.photo_pathZone{    
+    width:20%;  
+}
+.photo_pathZone img{
+    width:100px;
+    height:150px;
+    
+    
+}
+.contentZone{        
+    width:70%;    
+    padding : 20px;
+}
+.btnZone{    
+    width:10%;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnZone input[type='button']{
+        
+        width: 90px;
+        height: 52px;
+        border: none;
+        border-radius: 10px;
+        background: #ff4b4b;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+    
+}
+
+
+

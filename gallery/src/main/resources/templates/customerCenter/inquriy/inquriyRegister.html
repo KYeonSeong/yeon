@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inquriyRegister</title>
+
+</head>
+
+<body>
+    <div>
+        <div class="sectionTitle">1:1 문의</div>
+        <div class="sectionContentR">
+            <div class="form-group ">
+                <label class="col-form-label mt-4" for="inputDefault">제목</label>
+                <input type="text" class="form-control inSub" placeholder="제목을 입력하세요" id="inputDefault" maxlength="50">
+                <br/>
+                <input type="text" class="form-control inTel" placeholder="번호를 입력하세요" id="inputDefault" maxlength="11">
+            </div>
+            <div class="form-group fga">
+                <label for="exampleTextarea" class="form-label mt-4">내용</label>
+                <textarea class="inquriy_ta inDoc form-control" id="exampleTextarea"
+                    placeholder="문의사항을 입력하세요" maxlength="5000"></textarea>
+            </div>
+            <button type="button" id="centerBtn" class="inquriyRegisterBtn btn btn-outline-secondary "
+                th:if="${session.id ne null and (session.auth == 1 or session.auth == 2) }">등록</button>
+        </div>
+    </div>
+</body>
+
+</html>

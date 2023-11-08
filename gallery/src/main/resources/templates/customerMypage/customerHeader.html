@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+</head>
+<body>        
+    <div class="customerMypage" th:fragment="fragment" >  
+        <div class="customerMypage_top" > <!--상단-->
+
+            <div class="customerMypage_top_left">
+                <!--이미지영역-->
+            </div>
+
+            <div class="customerMypage_top_right"  >
+                
+                    <div class="customerMypage_top_contents" >
+                        <div>안녕하세요😊</div>
+                        <span th:text="${vo.id}+님"></span>
+                    </div>
+
+                    <div class="customerMypage_top_contents">
+                        <div class="customerMypage_top_title">나의 포인트</div>                                                    
+                        <span th:text="${#numbers.formatDecimal(vo.cash, 0, 'COMMA', 0, 'POINT')}+원"></span>                            
+                    </div>
+                
+            </div>
+
+        </div>       
+    </div>
+</body>
+</html>

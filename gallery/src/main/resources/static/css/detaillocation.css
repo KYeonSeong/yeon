@@ -1,0 +1,12 @@
+#locationContainer{
+    margin-top:50px;
+}
+#mapSee{
+    display: none;
+}
+#location_info{
+    width:700px;
+    background-color:#F0EBE3;
+    padding: 15px;
+    border-radius: 5px;
+}

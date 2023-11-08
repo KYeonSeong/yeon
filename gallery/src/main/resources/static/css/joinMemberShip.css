@@ -1,0 +1,133 @@
+/* 전체 페이지 스타일 */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; /* 수정한 색상 */
+}
+
+/* 회원가입 컨테이너 스타일 */
+#joinMemberShip {
+  width: 350px;
+  height: 500px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 3px solid #7D9D9C;
+}
+
+.frmjoinMemberShip button {
+  width: 70%;
+  padding: 10px;
+  margin-top: 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.joinGeneralBtn {
+  background-color: #7D9D9C; /* 수정한 색상 */
+  color: white;
+  font-weight: bolder;
+}
+
+.joinCompanyBtn {
+  background-color: #7d9d9c; /* 수정한 색상 */
+  color: white;
+  font-weight: bolder;
+}
+
+#joinMemberShip .line {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  color: #aaa;
+  margin: 20px 0px;
+}
+#joinMemberShip .line::before {
+  content: "";
+  flex-grow: 2;
+  margin: 0px 16px;
+  background: #aaa;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+}
+#joinMemberShip .line::after {
+  content: "";
+  flex-grow: 2;
+  margin: 0px 16px;
+  background: #aaa;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+ul li {
+  margin-top: 5px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul li span.naver,
+ul li span.kakao {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bolder;
+  margin: 0 5px;
+}
+
+ul li span.naver {
+  background-color: #1eff00; /* 수정한 색상 */
+  color: white;
+}
+
+ul li span.kakao {
+  background-color: #ffe600; /* 수정한 색상 */
+}
+
+ul li span.naver:hover {
+  background-color: #1eff55;
+}
+
+ul li span.kakao:hover {
+  background-color: #dde478;
+}
+
+/* 주황색 회원가입 버튼 스타일 */
+.joinGeneralBtn:hover {
+  background-color: #0056b3; /* 밝은 주황색 */
+}
+
+/* 파란색 회원가입 버튼 스타일 */
+.joinCompanyBtn:hover {
+  background-color: #0056b3; /* 밝은 파란색 */
+}
+
+/* 이미지 스타일 */
+#joinMemberShip img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.logoImage {
+  cursor: pointer;
+}

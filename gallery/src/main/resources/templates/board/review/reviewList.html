@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>후기 게시판</title>
+</head>
+<body>
+    <div id="reviewBoard">
+        <h1>후기 게시판</h1>
+        <form name="frmReview" class="frmReview" method="post">
+            <input type="text" size="50" th:value="${page2.findStr}" name="findStr" class="findStr" placeholder="제목, 내용, 작성자를 검색하세요">
+            <button type="button" class="btnReviewFind"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="hidden" name="nowPage" th:value="${page2.nowPage}"/>
+            <input type="hidden" name="sno"/>
+        </form>
+
+        <div class="reviewList">
+            <div class="title">
+                <span class="sno">SNO</span>
+                <span class="subject">제목</span>
+                <span class="id">작성자</span>
+                <span class="nal">작성일</span>
+                <span class="hit">조회수</span>
+                <span class="totRepl">댓글수</span>
+            </div>
+
+            <div class="items" >
+                <div class="item" th:each="r:${list}" th:onclick="reviewView([[${r.sno}]])">
+                    <span class="sno" th:text="${r.sno}">1</span>
+                    <span class="subject" th:text="${r.subject}">아임 프리!</span>
+                    <span class="id" th:text="${r.id}">김종국</span>
+                    <span class="nal" th:text="${r.nal}">2023-08-04</span>
+                    <span class="hit" th:text="${r.hit}">50</span>
+                    <span class="totRepl" th:utext="${r.replCnt}">5</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="page2">
+            <th:block th:if="${page2.startPage gt 1}">
+                <button type="button" class="btnFirst" value="1" onclick="move2(this.value)">처음</button>
+                <button type="button" class="btnPrev" th:value="${page2.startPage-1}" onclick="move2(this.value)">이전</button>
+            </th:block>
+
+            <th:block th:each="m : ${#numbers.sequence(page2.startPage, page2.endPage, 1)}">
+                <button type="button" class="btnNum" 
+                        th:class="${page2.nowPage eq m}? 'now' : 'btnNum'" 
+                        onclick="move2(this.value)" th:text="${m}" th:value="${m}"/>
+            </th:block>
+
+            <th:block th:if="${page2.endPage lt page2.totPage}">
+                <button type="button" class="btnNext" 
+                        th:value="${page2.endPage+1}" onclick="move2(this.value)">다음</button>
+                <button type="button" class="btnLast" 
+                        th:value="${page2.totPage}" onclick="move2(this.value)">맨끝</button>
+            </th:block>
+        </div>
+        <div class="btnZone">
+            <button type="button" class="goReviewRegister" th:if="${session.id ne null}">글쓰기</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mainFooter</title>
+
+</head>
+
+<body>
+  <footer style="background-color: #f8eded;" class="mainFooter" th:fragment="fragment">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <button type="button" class="centerBtn" style="border:none;font-size: 2em;">고객센터 > </button><br />
+          <br />
+          <span>1234-1234</span><br>
+          <span>월-금 10:00~18:00</span>
+          <br>
+          <span>(주말,공휴일 휴무)</span>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-3 tog2">
+          <span class="mb-1 noticeBtn">공지사항</span>
+          <span class="mb-1 inquriyBtn" th:if="${session.id ne null}">1:1 문의</span>
+          <span class="mb-1 FAQBtn">자주 묻는 질문</span>
+        </div>
+        <div class="col-lg-6 col-md-12 mb-4 tog">
+            <div>
+              김채린 ryn3439@naver.com<br />
+              김학준 soranight135@naver.com<br />
+              이철호 andro9701@naver.com
+            </div>
+            <div>
+              김진희 gmlssns7@naver.com<br />
+              강연성 io098@naver.com<br />
+              신대엽 code34s@naver.com
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-dark">To Gallery</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</body>
+
+</html>

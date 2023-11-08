@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>  
+    
+</head>
+<body>        
+    <div class="sellerSection" th:fragment="fragment">  
+        
+        <div class="sellerMypage_header"><!--상단틀-->
+                
+        </div>
+       
+            
+        <div class="sellerMypage_wrap"> <!--중단틀-->
+
+            <div class="sellerMypage_left_wrap"><!--중단왼쪽-->
+
+                <div class="selleMyrpage_left_title">
+                   
+                </div>
+                    
+            
+                    <ul>
+                        <li class="sellerMypage_left_sub">
+                            <span id="sellerupdate" class="sellerMypage_left_sub">상품등록</span>
+                        </li>
+            
+                        <li class="sellerMypage_left_sub">
+                            <span id="gallerylist" class="sellerMypage_left_sub">상품내역</span>
+                        </li>
+    
+                        <li class="sellerMypage_left_sub">
+                            <span id="sellerrefund" class="sellerMypage_left_sub">정보수정</span>
+                        </li>
+            
+                        <!-- <li class="sellerMypage_left_sub">
+                            <span id="sellerData" class="sellerMypage_left_sub">매출관리</span>
+                        </li>
+                    </ul>
+            
+                    <ul>
+                        <li class="sellerMypage_left_sub">
+                            <span id="sellermodify" class="sellerMypage_left_sub">정보수정</span>
+                        </li>
+                    </ul> -->
+            
+                    <ul>
+                        <li class="sellerMypage_left_sub">
+                            <span id="noticeBtn" class="sellerMypage_left_sub">공지사항</span>
+                        </li>
+            
+                        <li class="sellerMypage_left_sub">
+                            <span id="FAQBtn" class="sellerMypage_left_sub">자주묻는질문</span>
+                        </li>
+            
+                        <li class="sellerMypage_left_sub">
+                            <span id="inquriyBtn" class="sellerMypage_left_sub">1:1문의</span>
+                        </li>
+                    </ul>
+                </div><!--중단왼쪽-->
+    
+                <div class="sellerMypage_right_wrap"><!--중단 오른쪽-->
+                    
+                </div>
+                        
+                
+            </div>
+    
+           
+    
+        </div>
+        <script th:inline="javascript">
+            function redirectToSellerUpdatePage() {
+                var url = /*[[@{/sellerupdate}]]*/ ''; // URL 표현식 사용
+                window.location.href = url;
+            }
+        </script>
+    
+    </body>
+    </html>
+
+    </div>
+    
+
+</body>
+</html>

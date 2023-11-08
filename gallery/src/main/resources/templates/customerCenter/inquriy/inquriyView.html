@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inquriyView</title>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <form id="inquriyViewForm">
+        <div class="sectionTitle">
+            1:1 문의
+        </div>
+        <div class="sectionContentV">
+            <input type="text" th:value="${iqv.nal}" readonly style="border:none;pointer-events: none;">
+            <div id="centerbox" class="card mb-3">
+                <div class="inquriy_title card-header custom-card-header" id="centerTitle" th:text="${iqv.subject}">
+                </div>
+                <span class="card-body">연락처: <span th:text="${iqv.Tel}"></span></span>
+                <div class="card-body custom-card-body">
+                    <p class="inquriy_content card-text line-break" id="centerContent" th:text="${iqv.doc}"></p>
+                </div>
+            </div>
+            <div id="centerbox" class="card mb-3" th:if="${iqv.answer ne null}">
+                <div class="inquriy_title card-header custom-card-header" id="centerTitle">답변</div>
+                <div class="card-body custom-card-body2">
+                    <p class="inquriy_content card-text line-break" id="centerContent" th:if="${iqv.answer ne null}"
+                        th:text="${iqv.answer}"></p>
+                </div>
+            </div>
+            <div id="centerBtn">
+                <button type="button" class="inquriyRepl btn btn-outline-secondary"
+                    th:if="${session.id ne null and session.auth == 0 }">답변 등록</button>
+                <button type="button" class="btn btn-outline-secondary inquriyDel"
+                    th:if="${session.id ne null and session.auth == 0 }">삭제</button>
+                <button type="button" class="inquriyBtn btn btn-outline-secondary"
+                    th:if="${session.id ne null and session.auth ne null }">목록</button>
+            </div>
+            <div class="iqvsno" th:text="${iqv.sno}" hidden></div>
+        </div>
+    </form>
+</body>
+
+</html>

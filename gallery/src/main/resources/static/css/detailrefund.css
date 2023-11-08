@@ -1,0 +1,11 @@
+#rPolicy{
+    background-color: #F0EBE3;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: 500;
+    padding: 15px;
+}
+#refundPolicy{
+    margin-top: 50px;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeRepl</title>
+</head>
+<body>
+    <div id="freeRepl" th:fragment="fragment">
+        <form name="frmFreeRepl" class="frmFreeRepl" method="post">
+            <output name="id">[[${session.id}]]</output><br/>
+            <textarea name="doc" class="doc" rows="5" placeholder="댓글을 남겨보세요"></textarea>
+            <button type="button" class="btnFreeRepl" th:if="${session.id ne null}">댓글 등록</button>
+
+            <input type="hidden" name="id" th:value="${session.id}"/> 
+            <input type="hidden" name="freeBoardSno" th:value="${vo.sno}"/>
+        </form>
+    </div>
+</body>
+</html>

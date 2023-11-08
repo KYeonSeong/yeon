@@ -1,0 +1,98 @@
+#frmPayment{
+    width:900px;
+    background-color: #7D9D9C;
+    height:100%;
+    margin: 0px auto;
+    padding:50px;
+}
+#frmPayment input{
+    border:none;
+    min-width:40px;
+    max-width:400px;
+}
+#ticket_info{
+    border-radius: 10px;
+    background-color: #F0EBE3;
+    padding:10px;
+    height:100%;
+}
+
+#ticket_info span:nth-child(1){
+    margin-right:33px;
+}
+#ticket_info span:nth-child(4){
+    margin-right:17px;
+}
+#adultTicketingInfo span:nth-child(1), #adultTicketingInfo span:nth-child(4), #adultTicketingInfo span:nth-child(10),
+#teenTicketingInfo span:nth-child(1), #teenTicketingInfo span:nth-child(4), #teenTicketingInfo span:nth-child(10),
+#kidTicketingInfo span:nth-child(1), #kidTicketingInfo span:nth-child(4), #kidTicketingInfo span:nth-child(10){
+    margin-right:20px;
+}
+#adultTicketingInfo span:nth-child(7), #teenTicketingInfo span:nth-child(7), #kidTicketingInfo span:nth-child(7){
+    margin-right:52px;
+}
+#adultTicketingInfo, #teenTicketingInfo, #kidTicketingInfo{
+    border-radius: 10px;
+    background-color: #F0EBE3;
+    padding:10px;
+    margin-bottom:10px;
+}
+#userInfo{
+    border-radius: 10px;
+    background-color: #F0EBE3;
+    padding:10px;
+}
+#userInfo span{
+    margin-right: 10px;
+}
+#userSpan{
+    font-size: medium;
+    font-weight: bold;
+}
+#lInfo{
+    display: contents;
+}
+#location_info{
+    display: contents;
+}
+#userNotice{
+    color: #444;
+    font-size:small;
+    margin: 5px auto;
+    background-color: #7D9D9C;
+
+}
+#btnRealPayment{
+    margin:10px auto;
+}
+#totAmt{
+    background-color: #7D9D9C;
+    font-size: medium;
+    font-weight:bold;
+    width:200px;
+    text-align: left;
+}
+#totAmtResult{
+    font-size: large;
+    font-weight: bold;
+}
+.payResultsub{
+    background-color: #7D9D9C;
+    font-size: medium;
+    font-weight:bold;
+    color:#fff;
+    width:200px;
+    text-align: left;
+}
+#btnRealPaymentContainer{
+    text-align: center;
+}
+#btnRealPayment{
+    border-radius: 5px;
+    width:180px;
+    height:45px;
+}
+#adultTicketingInfo input[type=text], #teenTicketingInfo input[type=text],
+#kidTicketingInfo input[type=text], #gallery_name, #userInfo input[type=text]{
+    background-color: #F0EBE3;
+}

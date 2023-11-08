@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="free">
+    <!--select-->
+    <select id="select" parameterType="Page" resultType="FreeVo">
+        select sno, hit, left(nal, 10) nal, subject,
+            id, freePwd
+        from freeBoard
+        where subject like '%${findStr}%'
+        order by sno desc
+        limit ${startNo}, ${listSize}
+    </select>
+
+    <select id="mySelect" parameterType="Page" resultType="FreeVo">
+        select sno, hit, left(nal, 10) nal,subject,
+            id, freePwd
+        from freeBoard
+        where id=#{id}
+        order by sno desc
+        limit ${startNo}, ${listSize}
+    </select>
+ 
+    <select id="totSize" parameterType="Page" resultType="Integer">
+        select count(sno) totSize 
+        from freeBoard
+        where subject like '%${findStr}%' or doc like '%${findStr}%'
+    </select>
+
+    <select id="getSerial" parameterType="String" resultType="Integer">
+        select getFreeBoardSerial(#{_parameter})
+    </select>
+
+    <!--insert-->
+    <insert id="register" parameterType="FreeVo">
+        insert into freeBoard(sno, hit, nal, id, subject, doc, freePwd) 
+        values(#{sno}, 0, now(), #{id}, #{subject}, #{doc}, #{freePwd})
+    </insert>
+
+    <insert id="attRegister" parameterType="FreeAtt">
+        insert into freeBoardAtt(pSno, oriFile, sysFile) values
+            <foreach collection="list" item="vo" separator=",">
+                (#{vo.pSno}, #{vo.oriFile}, #{vo.sysFile})
+            </foreach>
+    </insert>
+
+    <!--view-->
+    <select id="view" parameterType="Integer" resultType="FreeVo">
+        select sno, hit, left(nal, 16) nal, id, subject, doc, freePwd from freeBoard where sno=#{sno}
+    </select>
+
+    <select id="attFiles" parameterType="Integer" resultType="FreeAtt">
+        select * from freeBoardAtt where pSno=#{pSno}
+    </select>
+
+    <update id="hitUpdate" parameterType="Integer">
+        update freeBoard set hit=hit+1 where sno=#{sno}
+    </update>
+
+     <!--modify-->
+    <update id="update" parameterType="FreeVo">
+        update freeBoard set subject=#{subject}, doc=#{doc} where sno=#{sno}
+    </update>
+
+    <!--delete-->
+    <delete id="delete" parameterType="Integer">
+        delete from freeBoard where sno=#{sno}
+    </delete>
+
+    <delete id="deleteAtt" parameterType="List">
+        delete from freeBoardAtt where sysFile in
+            <foreach collection="array" item="f" open="(" close=")" separator=",">
+                #{f}
+            </foreach>
+    </delete>
+
+    <select id="checkRepl" parameterType="FreeVo" resultType="Integer">
+        select count(freeBoardSno) from freeBoardReply
+        where freeBoardSno=#{sno} and 
+        <![CDATA[
+        seq>#{seq} and deep>#{deep}
+        ]]>
+    </select>
+
+    <!--repl-->
+    <insert id="repl" parameterType="FreeReply">
+        insert into freeBoardReply(sno, freeBoardSno, grp, seq, deep, nal, id, doc)
+        values(#{sno}, #{freeBoardSno}, #{grp}, 0, 0, now(), #{id}, #{doc})
+    </insert>
+
+    <insert id="replRep" parameterType="FreeReply">
+        insert into freeBoardReply(sno, freeBoardSno, grp, seq, deep, nal, id, doc)
+        values(#{sno}, #{freeBoardSno}, #{grp}, #{seq}, #{deep}, now(), #{id}, #{doc})
+    </insert>
+
+    <select id="getSerialR" parameterType="String" resultType="Integer">
+        select getFreeBoardReplySerial(#{_parameter})
+    </select>
+
+    <update id="seqUp" parameterType="FreeVo">
+        update freeBoardReply set seq=seq+1 where grp=#{grp} and <![CDATA[seq>#{seq}]]>
+    </update>
+
+    <select id="replies" resultType="FreeReply">
+        select sno, freeBoardSno, grp, seq, deep, left(nal, 16) nal, doc, id
+        from freeBoardReply
+        where freeBoardSno = #{freeBoardSno}
+        order by grp asc, seq asc
+    </select>
+
+    <!-- Add new SQL statements -->
+    <update id="replUpdate" parameterType="FreeReply">
+        update freeBoardReply set doc=#{doc} where sno=#{sno}
+    </update>
+
+    <delete id="replDelete" parameterType="Integer">
+        delete from freeBoardReply where sno=#{sno}
+    </delete>
+
+</mapper>

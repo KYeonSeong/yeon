@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>noticeView</title>
+
+</head>
+
+<body>
+    <form id="noticeViewForm">
+        <div class="sectionTitle">
+            공지사항
+        </div>
+        <div class="sectionContentV">
+            <input type="text" th:value="${nqv.nal}" readonly style="border:none;pointer-events: none;">
+            <div id="centerbox" class="card mb-3">
+                <div class="notice_title card-header custom-card-header" id="centerTitle" th:text="${nqv.subject}">
+                </div>
+                <div class="card-body custom-card-body">
+                    <p class="notice_content card-text line-break" id="centerContent" th:text="${nqv.doc}"></p>
+                </div>
+            </div>
+            <div id="centerBtn">
+                <button type="button" th:if="${session.id ne null and session.auth == 0}"
+                    class="noticeModify btn btn-outline-secondary">수정</button>
+                <button type="button" th:if="${session.id ne null and session.auth == 0}"
+                    class="noticeDel btn btn-outline-secondary">삭제</button>
+                <button type="button" class="noticeBtn btn btn-outline-secondary">목록</button>
+            </div>
+        </div>
+        <input type="hidden" class="nqv_sno" th:value="${nqv.sno}">
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE mapper      
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"      
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="center">
+
+   <insert id="nregister" parameterType="noticeVo">
+      insert into notice (subject, doc, nal)
+      values (#{subject}, #{doc}, #{nal} )
+   </insert>
+
+  <select id="nlist" resultType="noticeVo">
+      select sno, subject, nal from notice
+      order by sno desc
+      LIMIT #{startNo}, #{listSize}
+   </select>
+
+   <select id="ntotSize" resultType="Integer">
+      select count(*) from notice
+   </select>
+
+   <select id="nview" parameterType="Integer" resultType="noticeVo">
+      select sno, subject, doc, nal from notice where sno = #{sno}
+   </select>
+
+    <delete id="ndelete" parameterType="noticeVo">
+        delete from notice where sno=#{sno}
+    </delete>
+
+   <update id="nupdate" parameterType="noticeVo">
+        update notice set subject=#{subject}, doc=#{doc} where sno=#{sno}
+    </update>
+
+
+  <insert id="fregister" parameterType="FAQVo">
+      insert into faq (subject, doc)
+      values (#{subject}, #{doc} )
+   </insert>
+
+  <select id="flist" resultType="FAQVo">
+      select sno, subject from faq
+      order by sno desc
+      LIMIT #{startNo}, #{listSize}
+   </select>
+
+   <select id="ftotSize" resultType="Integer">
+      select count(*) from faq
+   </select>
+
+   <select id="fview" parameterType="Integer" resultType="FAQVo">
+      select sno, subject, doc from faq where sno = #{sno}
+   </select>
+
+   <delete id="fdelete" parameterType="FAQVo">
+        delete from faq where sno=#{sno}
+    </delete>
+
+   <update id="fupdate" parameterType="FAQVo">
+        update faq set subject=#{subject}, doc=#{doc} where sno=#{sno}
+    </update>
+
+
+
+   <insert id="iregister" parameterType="questionVo">
+      insert into question(id, subject, doc, nal, tel, status)
+      values (#{id}, #{subject},#{doc}, #{nal}, #{tel}, #{status} )
+   </insert>
+
+   <select id="iview" parameterType="Integer" resultType="questionVo">
+      select sno, subject, doc, answer, nal, tel from question where sno = #{sno}
+   </select>
+   
+   <select id="ilist" resultType="questionVo">
+      select sno, id, subject, nal, tel, status from question
+      order by sno desc
+      LIMIT #{startNo}, #{listSize}
+   </select>
+
+   <select id="itotSize" resultType="Integer" parameterType="questionVo">
+    select count(id) from question
+        <where>
+        <if test="auth != 0">
+            and id=#{id}
+        </if>
+    </where>
+   </select>
+
+   <update id="adminrepl" parameterType="questionVo">
+      update question
+      set answer = #{answer}, status = '답변 완료'
+      where sno = #{sno}
+   </update>
+
+   <delete id="idelete" parameterType="questionVo">
+        delete from question where sno=#{sno}
+   </delete>
+
+
+
+
+
+
+
+</mapper>

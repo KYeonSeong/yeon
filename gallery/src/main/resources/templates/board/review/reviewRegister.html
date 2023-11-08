@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>후기글 작성</title>
+    <script defer src="/js/board.js"></script>
+</head>
+<body>
+    <div id="reviewRegister">
+        <form name="frmReview" class="frmReview" method="post">
+            <h2>후기글</h2>
+            <span>구매내역</span>
+            <select name="payNum" class="payNum">
+                <option value="" disabled selected>전시회번호 : 예매번호</option>
+                <option th:each="ticket : ${ticketList}" th:value="${ticket.payNum}" th:text="${ticket.gallery_num} + ' : ' + ${ticket.payNum}"></option>
+            </select>
+            <br/>
+            <span>제목</span>
+            <input type="text" name="subject" size="90" placeholder="제목을 입력하세요">
+            <br/>
+            <textarea name="doc" class="doc" cols="122" rows="25" placeholder="내용을 입력하세요"></textarea>
+            <br/>
+            <label class="fileUpload">
+                <i class="fa-solid fa-folder-open"></i><span class="fileText">첨부</span>
+                <input type="file" name="attFile" class="attFile" style="display:none;" multiple>
+            </label>
+            <br/>
+            <div class="btnZone">
+                <button type="button" class="btnReviewRegister">등록</button>
+                <button type="button" class="reviewBtn"><i class="fa-solid fa-list"></i></button>
+            </div>
+
+            <input type="hidden" name="id" th:value="${session.id}"/>
+            <input type="hidden" name="nal" th:value="${param.nal}"/>
+            <input type="hidden" name="gallery_num" class="gallery_num" value="">
+        </form>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        let userId = document.querySelector('input[name="id"]').value;
+
+        // 페이지 로드 시 사용자의 예매 내역 가져오기
+        $.ajax({
+            type : "GET",
+            url : "/getTicketList",
+            data : {userId: userId},
+            success : function(data){
+                let userPayNum = $(".payNum");
+                let usergallery_num = $(".gallery_num");
+
+                // 가져온 예매 내역으로 옵션 추가
+                data.forEach(function(ticket){
+                    let option = $("<option/>",{
+                        value : ticket.payNum,
+                        text : ticket.gallery_num + " : " + ticket.payNum
+                    })
+                    userPayNum.append(option);
+                })
+
+                // payNum 선택 시 해당 gallery_num 값을 갱신
+                userPayNum.on("change", function(){
+                    let checkPay = data.find(function(ticket){
+                        return ticket.payNum == userPayNum.val();
+                    });
+                    usergallery_num.val(checkPay ? checkPay.gallery_num : "");
+                });
+            },
+            error : function(error){
+                console.log("Ticket 정보를 가져오는 도중에 오류가 발생했습니다!");
+            }
+        })
+    });
+</script>
+</html>

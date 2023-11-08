@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+
+</head>
+
+<body>
+    <form id="faqForm" name="faqForm">
+        <div class="sectionTitle">
+            자주 묻는 질문
+        </div>
+        <div class="sectionContentP">
+            <div class="list_header f">
+                <span class="FAQNo centerA">번호</span>
+                <span class="FAQSubject centerA headsub">제목</span>
+            </div>
+            <div class="coco">
+                <div id="lc" class="flist_content f" th:each="f:${faqList}">
+                    <span th:text="${f.sno}" th:value="${f.sno}" class="fNo centerA"></span>
+                    <span th:text="${f.subject}" th:value="${f.subject}" class="fSub centerA contentsub"></span>
+                </div>
+            </div>
+            <button th:if="${session.id ne null and session.auth == 0}" type="button" id="centerBtn"
+                class="FAQRBtn btn btn-outline-secondary">작성</button>
+        </div>
+        <input type="hidden" name="nowPage" th:value="${fpage.nowPage}">
+    </form>
+    <div class="page" th:if="${fpage.totSize > 0}">
+        <th:block th:if="${fpage.startPage} gt 1">
+            <button type="button" class="btn btn-outline-secondary btnFirst" value="1" onclick="fmove(this.value)">
+                << </button>
+                    <button type="button" class="btnPrev btn btn-outline-secondary" th:value="${fpage.startPage-1}"
+                        onclick="fmove(this.value)">
+                        < </button>
+        </th:block>
+        <th:block th:each="m : ${#numbers.sequence(fpage.startPage,fpage.endPage)}">
+            <button type="button" class="btnNow btn btn-outline-secondary"
+                th:classappend="${fpage.nowPage eq m ? 'active' : ''}" onclick="fmove(this.value)" th:text="${m}"
+                th:value="${m}" />
+        </th:block>
+        <th:block th:if="${fpage.endPage lt fpage.totPage}">
+            <button type="button" class="btnNext btn btn-outline-secondary" th:value="${fpage.endPage+1}"
+                onclick="fmove(this.value)"> > </button>
+            <button type="button" class="btnLast btn btn-outline-secondary" th:value="${fpage.totPage}"
+                onclick="fmove(this.value)"> >> </button>
+        </th:block>
+    </div>
+</body>
+
+</html>

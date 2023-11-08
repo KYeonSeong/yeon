@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>후기글 상세보기</title>
+</head>
+<body>
+    <div id="reviewBoardView">
+        <form name="frmReview" class="frmReview" method="post">
+            <h2>
+                <div class="subject" th:text="${vo.subject}"/>
+            </h2>
+            <div class="reviewViewList">
+                <output name="id">[[${vo.id}]]</output><br/>
+                <output name="nal">[[${vo.nal}]]</output>
+                <span>조회수</span>
+                <output name="hit">[[${vo.hit}]]</output>
+            </div>
+            <br/>
+            <div class="attZone">
+                <div th:each="att : ${vo.attFiles}">
+                    <img th:src="|/reviewUpload/${att.sysFile}|" width="600px" height="400px">
+                </div>
+            </div>
+            <div class="doc" th:utext="${vo.doc}"></div>
+            <div class="btnZone">
+                <button type="button" class="goReviewModify" th:if="${session.id eq vo.id} or ${session.auth == 0}">수정</button>
+                <button type="button" class="btnReviewDelete" th:if="${session.auth == 0}">삭제</button>
+                <button type="button" class="reviewBtn"><i class="fa-solid fa-list"></i></button>
+            </div>
+            <input type="hidden" name="sno" th:value="${vo.sno}"/>
+            <input type="hidden" name="grp" th:value="${vo.grp}"/>
+            <input type="hidden" name="gallery_num" th:value="${vo.gallery_num}"/>
+            <input type="hidden" name="payNum" th:value="${vo.payNum}"/>
+            <input type="hidden" name="nowPage" th:value="${page2.nowPage}"/>
+            <input type="hidden" name="findStr" th:value="${page2.findStr}"/>
+            <input type="hidden" name="payNum" th:value="${vo.payNum}"/>
+            <input type="hidden" name="gallery_num" th:value="${vo.gallery_num}"/>
+        </form>
+    </div>
+    <hr/>
+    <div th:replace="~{/board/review/reviewRepl :: fragment}"/>
+    <div th:replace="~{/board/review/reviewReplView :: fragment}"/>
+</body>
+</html>

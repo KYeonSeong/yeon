@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper      
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"      
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="review">
+    <!--select-->
+    <select id="select" parameterType="Page2" resultType="ReviewVo">
+        select sno, subject, hit, left(nal, 10) nal, id, getReplCnt(grp) replCnt, gallery_num, payNum
+        from reviewBoard
+        where subject like '%${findStr}%'
+        or doc like '%${findStr}%'
+        order by sno desc
+        limit ${startNo}, ${listSize}
+    </select>
+
+    <select id="myReviewSelect" parameterType="Page2" resultType="ReviewVo">
+        select sno, subject, id, left(nal, 10) nal
+        from reviewBoard
+        where id=#{id}
+        order by sno desc
+        limit ${startNo}, ${listSize}
+    </select>
+
+    <select id="totSize" parameterType="Page" resultType="Integer">
+        select count(sno) totSize 
+        from reviewBoard
+        where subject like '%${findStr}%' or doc like '%${findStr}%'
+    </select>
+
+    <select id="getSerial" parameterType="String" resultType="Integer">
+        select getReviewBoardSerial(#{_parameter})
+    </select>
+
+    <!--insert-->
+    <insert id="register" parameterType="ReviewVo">
+        insert into reviewBoard(sno, grp, hit, nal, id, subject, doc, gallery_num, payNum)
+        values(#{sno}, #{sno}, 0, now(), #{id}, #{subject}, #{doc}, #{gallery_num}, #{payNum})
+    </insert>
+
+    <insert id="attRegister" parameterType="ReviewAtt">
+        insert into reviewBoardAtt(pSno, oriFile, sysFile) values
+            <foreach collection="list" item="vo" separator=",">
+                (#{vo.pSno}, #{vo.oriFile}, #{vo.sysFile})
+            </foreach>
+    </insert>
+
+    <!--view-->
+    <select id="view" parameterType="Integer" resultType="ReviewVo">
+        select sno, grp, hit, left(nal, 16) nal, id, subject, doc, gallery_num, payNum from reviewBoard where sno=#{_parameter}
+    </select>
+
+    <select id="attFiles" parameterType="Integer" resultType="ReviewAtt">
+        select * from reviewBoardAtt where pSno=#{_parameter}
+    </select>
+
+    <update id="hitUpdate" parameterType="Integer">
+        update reviewBoard set hit=hit+1 where sno=#{_parameter}
+    </update>
+
+    <!--modify-->
+    <update id="update" parameterType="ReviewVo">
+        update reviewBoard set subject=#{subject}, doc=#{doc} where sno=#{sno}
+    </update>
+
+    <!--delete-->
+    <delete id="delete" parameterType="Integer">
+        delete from reviewBoard where sno=#{_parameter}
+    </delete>
+
+    <delete id="deleteAtt" parameterType="List">
+        delete from reviewBoardAtt where sysFile in
+            <foreach collection="array" item="f" open="(" close=")" separator=",">
+                #{f}
+            </foreach>
+    </delete>
+
+    <!--repl-->
+    <insert id="repl" parameterType="ReviewVo">
+        insert into reviewBoardReply(grp, nal, id, doc)
+        values(#{grp}, now(), #{id}, #{doc})
+    </insert>
+
+    <select id="replies" resultType="ReviewReply">
+        select sno, grp, left(nal, 16) nal, doc, id
+        from reviewBoardReply
+        where grp = #{sno}
+        order by nal asc
+    </select>
+
+    <!-- Add new SQL statements -->
+    <update id="replUpdate" parameterType="ReviewReply">
+        update reviewBoardReply set doc=#{doc} where sno=#{sno}
+    </update>
+
+    <delete id="replDelete" parameterType="Integer">
+        delete from reviewBoardReply where sno=#{_parameter}
+    </delete>
+</mapper>

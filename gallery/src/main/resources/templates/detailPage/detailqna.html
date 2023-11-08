@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detailQ&A</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script defer src="./js/detailindex.js"></script>
+    <link rel="stylesheet" href="./css/detailqna.css">
+</head>
+<body>
+    <form id="frmQna" name="frmQna" method="post">
+        <input type="hidden" name="id" th:value="${session.id}">
+        <div id="qnaContainer">
+            <h4>티켓 관련 문의사항을 남겨주세요.</h4>
+            <span>환불/취소요청은 마이티켓 > 환불신청, 이용 불편 및 요청사항은 1:1문의를 이용해주세요.</span>
+            <br/>
+            <textarea class="doc" name="doc"
+                   placeholder="- Q&A를 통한 일정변경/환불 문의는 처리되지 않습니다.&#13;&#10;- 날짜/시간 변경은 불가하여 환불 후 다시 예매해야 합니다.&#13;&#10;- 티켓 환불은 마이티켓 > 예매내역에서 신청 가능합니다."></textarea>
+            <button type="button" id="qnaRegister">등록</button>
+            <br/>
+        </div>
+        <div class="qnaResult" th:each="q:${qnaList}" th:if="${q.deep==0}">
+            <div id="question">
+                <span class="id" th:text="${q.id}"></span> 
+                <span>([[${q.nal}]])</span>
+                <button class="btnAnswer">답변하기</button>
+                <br/>
+                <div th:text="${q.doc}"></div>
+                <input type="hidden" class="grp" name="grp" th:value="${q.grp}">
+                <input type="hidden" th:value="${q.gallery_num}">
+                <input type="hidden" th:value="${q.deep}">
+            </div>
+            <div class="answer">
+                <div class="answerResult" th:each="a:${qnaList}" 
+                    th:if="${q.grp == a.grp} and ${a.nal != q.nal} and ${a.deep==1}">
+                    <div class="qnaBox">
+                        <span th:text="${a.id}"></span>
+                        <span>([[${a.nal}]])</span>
+                        <div th:text="${a.doc}"></div>
+                        <input type="hidden" th:value="${a.grp}">
+                        <input type="hidden" th:value="${a.deep}">
+                    </div>
+                </div>
+                
+                <div class="answerRegister">
+                    <textarea class="qnaDoc" name="doc"></textarea>
+                    <button type="button" class="btnAnswerRegister">답변등록</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+

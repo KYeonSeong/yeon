@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script defer src="./js/detailindex.js"></script>    
+    <link rel="stylesheet" href="./css/payment.css">
+</head>
+<body>
+    <form name="frmPayment" id="frmPayment">
+        <h3>티켓 예매하기</h3>
+        <hr/>
+        <h4>티켓정보</h4>
+        <div th:each="g:${gList}">
+            <div id="ticket_info">                    
+                <span>티켓명</span>
+                <input type="text" id="gallery_name" name="gallery_name" th:value="${g.gallery_name}" readonly><br/>
+                <span id="lInfo">이용장소</span>
+                <div id="location_info" name="location_info" th:utext="${g.location_info}"></div>
+            </div>
+            <br/>
+            <h4>예매정보</h4>
+
+                <div th:if="${session.adultEa ne 0}">
+                    <div id="adultTicketingInfo">
+                        <span>선택옵션</span>
+                        <input type="text" value="성인" readonly><br/>
+                        <span>티켓가격</span>
+                        <input type="text" name="adult_price" th:value="${g.adult_price}" readonly><br/>
+                        <span>수량</span>
+                        <input type="text" class="adultEa" name="adultEa" th:value="${session.adultEa}"  readonly><br/>
+                        <span>티켓합계</span>
+                        <input type="text" class="adultAmt" name="adultAmt" th:value="${session.adultAmt}"  readonly>
+                    </div>   
+                </div>
+                
+                <div th:if="${session.teenEa ne 0}">
+                <div id="teenTicketingInfo">
+                    <span>선택옵션</span>
+                    <input type="text" value="청소년" readonly><br/>
+                    <span>티켓가격</span>
+                    <input type="text" name="teen_price" th:value="${g.teen_price}"  readonly><br/>
+                    <span>수량</span>
+                    <input type="text" class="teenEa" name="teenEa" th:value="${session.teenEa}"  readonly><br/>
+                    <span>티켓합계</span>
+                    <input type="text" class="teenAmt" name="teenAmt" th:value="${session.teenAmt}"  readonly>
+                </div>
+                </div>
+
+                <div th:if="${session.kidEa ne 0}">
+                <div id="kidTicketingInfo">
+                    <span>선택옵션</span>
+                    <input type="text" value="어린이" readonly><br/>
+                    <span>티켓가격</span>
+                    <input type="text" name="kid_price" th:value="${g.kid_price}" readonly><br/>
+                    <span>수량</span>
+                    <input type="text" class="kidEa" name="kidEa" th:value="${session.kidEa}"  readonly><br/>
+                    <span>티켓합계</span>
+                    <input type="text" class="kidAmt" name="kidAmt" th:value="${session.kidAmt}" readonly>                    
+                </div>
+                </div>
+        
+            <div >        
+                <div id="userSpan">이용자정보</div>
+                <div id="userNotice">
+                    <span>- 실제로 관람/이용하실 분의 실명/연락처를 입력해 주세요.</span><br/>
+                    <span>- 오기재시 정상 이용 및 긴급연락이 불가할 수 있으며 이에 따른 책임을 지지 않습니다.</span>
+                </div>
+                <div id="userInfo">
+                    <span>이용자이름</span><input type="text" name="name" th:value="${cVo.name}"/><br/>
+                    <span>휴대폰번호</span><input type="text" name="tel" th:value="${cVo.tel}"><br/>
+                    <span>이메일주소</span><input type="text" name="email" th:value="${cVo.email}">
+                </div>
+                <br/>
+                <span id="totAmtResult">보유 포인트 : </span>
+                <span id="totAmt" th:text="${#numbers.formatDecimal(cVo.cash, 0, 'COMMA', 0, 'POINT')}+원"></span>
+                <input type="hidden" class="cash" name="cash" th:value="${cVo.cash}"><br/><br/>
+                <span id="totAmtResult">총 결제금액 : </span>
+                <span id="totAmt" th:text="${#numbers.formatDecimal(session.totAmt, 0, 'COMMA', 0, 'POINT')}+원"></span>    
+                <input type="hidden" class="totAmt" name="totAmt" th:value="${session.totAmt}"><br/><br/>
+                <span id="totAmtResult">결제후 잔액 : </span>            
+                <input type="text" id="totAmt" class="payResult" value="0" readonly/>            
+                <input type="hidden" id="totAmt" class="pr" name="pr" readonly/> 
+                <br/><br/>
+
+                <input type="hidden" name="totEa" th:value="${session.totEa}">
+                <input type="hidden" name="company" th:value="${session.company}">
+                <input type="hidden" name="gallery_num" th:value="${session.gallery_num}">
+            </div>
+            
+            <div id="paymentMethod">
+                <h4>결제방법</h4>
+                <h6>포인트결제</h6>
+            </div>
+            <h5>- 티켓 환불규정</h5>
+            <h5>- 주의사항 및 약관동의</h5>
+            <input type="checkbox" id="agree"><span>상단의 환불규정/주의사항/약관을 모두 확인하였으며 이에 동의합니다.</span><br/>
+            <div id="btnRealPaymentContainer">
+                <button type="button" id="btnRealPayment">결제하기</button>
+            </div>
+        </div>
+        
+    </form>
+</body>
+</html>

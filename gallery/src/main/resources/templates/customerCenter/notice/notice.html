@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notice</title>
+
+
+</head>
+
+<body>
+    <form id="noticeForm" name="noticeForm">
+        <div class="sectionTitle">
+            공지사항
+        </div>
+        <div class="sectionContentP">
+            <div class="list_header n">
+                <span class="noticeNo centerA">번호</span>
+                <span class="noticeSubject centerA headsub">제목</span>
+                <span class="noticeDate centerA">작성일</span>
+            </div>
+            <div class="coco">
+                <div id="lc" class="nlist_content n" th:each="n:${noticeList}">
+                    <span th:text="${n.sno}" th:value="${n.sno}" class="nNo centerA"></span>
+                    <span th:text="${n.subject}" th:value="${n.subject}" class="nSub centerA contentsub"></span>
+                    <span th:text="${n.nal}" th:value="${n.nal}" class="nDate centerA"></span>
+                </div>
+            </div>
+            <button th:if="${session.id ne null and session.auth == 0}" type="button" id="centerBtn"
+                class="noticeRBtn btn  btn-outline-secondary">작성</button>
+        </div>
+        <input type="hidden" name="nowPage" th:value="${npage.nowPage}">
+    </form>
+    <div class="page" th:if="${npage.totSize > 0}">
+        <th:block th:if="${npage.startPage} gt 1">
+            <button type="button" class="btn btn-outline-secondary btnFirst" value="1" onclick="nmove(this.value)">
+                << </button>
+                    <button type="button" class="btnPrev btn btn-outline-secondary" th:value="${npage.startPage-1}"
+                        onclick="nmove(this.value)">
+                        < </button>
+        </th:block>
+        <th:block th:each="m : ${#numbers.sequence(npage.startPage,npage.endPage)}">
+            <button type="button" class="btnNow btn btn-outline-secondary"
+                th:classappend="${npage.nowPage eq m ? 'active' : ''}" onclick="nmove(this.value)" th:text="${m}"
+                th:value="${m}" />
+        </th:block>
+        <th:block th:if="${npage.endPage lt npage.totPage}">
+            <button type="button" class="btnNext btn btn-outline-secondary" th:value="${npage.endPage+1}"
+                onclick="nmove(this.value)"> > </button>
+            <button type="button" class="btnLast btn btn-outline-secondary" th:value="${npage.totPage}"
+                onclick="nmove(this.value)"> >> </button>
+        </th:block>
+    </div>
+</body>
+
+</html>

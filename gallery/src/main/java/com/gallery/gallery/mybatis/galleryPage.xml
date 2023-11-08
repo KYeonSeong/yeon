@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE mapper      
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"      
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="galleryPage">
+
+    <select id="searchList" resultType="GalleryPageVo">
+        select * from galleryPage
+    </select>
+
+    <select id="detailPage" parameterType="String" resultType="galleryPageVo">
+        select * from galleryPage
+        where gallery_num=#{gallery_num}
+    </select>
+
+    <select id="search" parameterType="String" resultType="GalleryPageVo">
+        select * from gallerypage
+        where location_info like '%${_parameter}%'
+        or gallery_name like '%${_parameter}%'
+        order by sno
+    </select>
+
+</mapper>

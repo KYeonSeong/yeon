@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mainSection</title>
+</head>
+
+<body>
+  <section class="mainSection" th:fragment="fragment">
+    <div id="slider" class="adBox">
+      <div class="sliderBox">
+        <image src="/adimage/art1.jpg"></image>
+      </div>
+      <div class="sliderBox">
+        <image src="/adimage/art2.jpg"></image>
+      </div>
+      <div class="sliderBox">
+        <image src="/adimage/art3.jpg"></image>
+      </div>
+    </div>
+    <div class="artBox">
+      <div class="art" th:each="galleryPageVo : ${list}">
+        <input type="hidden" id="gallery_num" th:value="${galleryPageVo.gallery_num}">
+        <img th:src="@{${galleryPageVo.photo_path}}">       
+        
+        <br />
+        <span class="junsiName" th:text="${galleryPageVo.gallery_name}">전시회명</span>
+        <br />
+        <span class="junsiPrice" th:text="${galleryPageVo.adult_price}">가격</span>
+      </div>
+    </div>
+    <div id="goBottom"></div>
+  </section>
+</body>
+
+</html>

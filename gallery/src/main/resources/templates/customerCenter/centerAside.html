@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>centeraside-FAQ</title>
+</head>
+
+<body>
+  <Aside class="centerAside" th:fragment="fragment">
+    <div>
+      <div class="asideTitle">
+        고객센터
+      </div>
+      <div class="centerAsideBtn">
+        <button type="button" class="noticeBtn">공지사항</button>
+        <button type="button" class="FAQBtn">자주 묻는 질문</button>
+        <button type="button" class="inquriyBtn" th:if="${session.id ne null}">1:1문의</button>
+      </div>
+
+    </div>
+  </Aside>
+</body>
+
+</html>

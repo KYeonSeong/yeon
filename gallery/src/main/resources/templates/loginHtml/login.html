@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인</title>
+  <script defer src="/js/login.js"></script>
+  <script defer src="/js/naverLogin.js"></script>
+  <script defer src="/js/kakaoLogin.js"></script>
+  <script src="http://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+  <header />
+  <section>
+    <div id="login">
+      <img class="logoImage" src="/adimage/ToGallery-logo.png" alt="to Gallery">
+      <form name="frmLogin" class="frmLogin" method="POST">
+        <input type="text" name="id" placeholder="아이디">
+        <br />
+        <input type="password" name="pwd" placeholder="비밀번호">
+        <br />
+        <input type="button" class="loginBtns" value="로그인">
+        <br />
+
+        <button type="button" class="idFindBtn">아이디 찾기</button>
+        <button type="button" class="pwdFindBtn">비밀번호 찾기</button>
+        <button type="button" class="signBtn">회원가입</button>
+        <hr />
+        <ul>
+          <li>
+            <!-- 아래와같이 아이디를 꼭 써준다. -->
+            <a id="naverIdLogin_loginButton" href="javascript:void(0)">
+              <span class="naver">네이버 로그인</span>
+            </a>
+          </li>
+          <li onclick="naverLogout(); return false;">
+            <a href="javascript:void(0)">
+              <span class="naver">네이버 로그아웃</span>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li onclick="kakaoLogin();">
+            <a href="javascript:void(0)">
+              <span class="kakao">카카오 로그인</span>
+            </a>
+          </li>
+          <li onclick="kakaoLogout();">
+            <a href="javascript:void(0)">
+              <span class="kakao">카카오 로그아웃</span>
+            </a>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </section>
+  <footer />
+</body>
+
+</html>

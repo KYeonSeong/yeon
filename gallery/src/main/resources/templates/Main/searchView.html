@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>searchView</title>
+</head>
+
+<body>
+  <div class="artBox" th:if="${list}">
+    <div class="art" th:each="galleryPageVo : ${list}">
+      <input type="hidden" id="gallery_num" th:value="${galleryPageVo.gallery_num}">
+      <img th:src="@{${galleryPageVo.photo_path}}">
+      <span class="junsiLocation" hidden th:text="${galleryPageVo.location_info}"></span>
+      <br />
+      <span class="junsiName" th:text="${galleryPageVo.gallery_name}">전시회명</span>
+      <br />
+      <span class="junsiPrice" th:text="${galleryPageVo.adult_price}">가격</span>
+    </div>
+  </div>
+</body>
+
+</html>

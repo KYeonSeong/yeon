@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    
+</head>
+<body>
+    <h1>등록한 전시회</h1>
+    <div class="sellergallerylist" th:fragment="fragment">   
+        <div class="GalleryView" th:each="v:${tList}">
+            <div class="galleryDate">
+                <div>
+                    <span>회사 : </span> 
+                    <span th:text="${v.company}"></span>
+                </div>                               
+          
+            </div>
+
+            <div class="gallerylistContent">
+                <div class="photo_pathZone">                    
+                    <img th:src="@{${v.photo_path}}">                    
+                </div>
+
+                <div class="viewZone">
+                    <span th:text="'전시회 이름: ' + ${v.galleryName}"></span><br>                 
+                    
+                   
+                        <span th:text="'입장권 : 성인 가격: ' + ${v.adultPrice}"></span>                        
+                
+                   
+                        <span th:text="' 청소년 가격: ' + ${v.teenPrice}"></span>                        
+                   
+                
+                        <span th:text="' 아동 가격: ' + ${v.kidPrice}"></span>                        
+                   
+                </div>
+
+                <!-- <div class="btnZone">
+                    <input type="button" class="btnView" name="btnView" value="상세보기">
+                </div> -->
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

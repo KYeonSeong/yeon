@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>간편 회원가입</title>
+  <script src="http://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+  <div id="joinNaver">
+    <h1>to gallery</h1>
+    <form name="frmjoinNaver" class="frmjoinNaver" method="POST">
+      <input type="text" class="naverId" name="naverId" readonly>
+      <br/>
+      <input type="text" class="naverName" name="naverName">
+      <br/> 
+      <input type="email" class="naverEmail" name="naverEmail">
+      <br/> 
+      <span>휴대폰 인증</span>
+      <br/>
+      <input type="text" class="naverPhone" name="naverPhone">
+      <button type="button" class="CertifiedBtn">인증요청</button>
+      <span class="textArea">
+        · 해외 휴대폰 번호를 사용하고 있다면 여기에서 가입해주세요.<br/>
+        · 회원가입/휴대폰 인증에 문제가 있다면 여기를 확인해주세요.
+      </span>
+      <br/>
+      <p>이용약관 동의</p>
+      <label><input type="checkbox" id="consentAll">전체 동의</label><hr/>
+      <label><input type="checkbox" class="consent" name="consent">만 14세 이상입니다. (필수)</label><hr/>
+      <label><input type="checkbox" class="consent" name="consent">이용약관 동의 (필수) <a href="https://timeticket.co.kr/html_file.php?file1=default.html&file2=user_stipulation.html&mode=join" target="_blank">내용보기</a></label><hr/>
+      <label><input type="checkbox" class="consent" name="consent">개인정보 수집 이용 동의 (필수)<a href="https://timeticket.co.kr/html_file.php?file1=default.html&file2=user_defend_s.html&mode=join" target="_blank">내용보기</a></label>
+      <br/>
+      <button type="button" class="signUpCompany">가입완료</button>
+    </form>
+  </div>
+</body>
+</html>

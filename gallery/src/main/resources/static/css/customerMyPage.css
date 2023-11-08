@@ -1,0 +1,244 @@
+/* ============================마이페이지============================= */
+
+
+/*마이페이지 customerIndex.html*/
+.customerMypage {
+    width: 1200px;
+    height: auto;
+    margin: 10px auto;
+}
+
+/*customerMypage_top*/
+/*마이페이지 상단*/
+
+.customerMypage_top {
+    width: auto;
+    height: 130px;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid #ff6060;
+    border-radius: 10px;
+}
+
+.customerMypage_top_left {
+    float: left;
+    background: #ff6060;
+    width: 240px;
+    height: 130px;
+    border-radius: 8px 0 0 8px;
+}
+
+/*상단틀*/
+.customerMypage_top_right {
+    width: auto;
+    height: 110px;
+    padding: 10px 0;
+    background: #fff;
+    border-radius: 10px 10px 10px 10px;
+    line-height: 200%;
+}
+
+/*상단내용*/
+.customerMypage_top_contents {
+    float: left;
+    width: 160px;
+    height: 65px;
+    padding: 22px 20px;
+    border-right: 1px solid #ddd;
+}
+
+
+
+
+/* customerSection */
+/* 마이페이지 섹션영역 */
+.customerMypage_wrap {
+    display: flex;
+    height: 640px;
+    margin: auto;
+}
+
+
+
+/* 마이페이지 왼쪽*/
+.customerMypage_left_wrap {
+    float: left;
+    width: 240px;
+    height: auto;
+    padding: 40px 30px 0 30px;
+    background: #d1cfcf;
+    border-radius: 10px;
+}
+
+.customerMypage_left_wrap ul {
+    list-style: none;
+    border-top: 1px solid #080808;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.customerMypage_left_title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #555;
+}
+
+.customerMypage_left_sub {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+
+
+
+/*마이페이지 오른쪽*/
+.customerMypage_right_wrap {
+    width: 970px;
+    padding: 0 30px 0 30px;
+    background: #f1efef;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+/*ticketView*/
+
+.ticketPrivTitle{
+    border:1px solid rgb(184, 181, 181);
+    border-radius: 10px;
+    height: 270px;    
+}
+.payDate{
+    text-align: right;     
+    height: 70px;   
+    padding-right: 20px;
+    border-bottom: 1px solid  rgb(184, 181, 181);
+    font-size: 20px;
+    font-weight: 1000;
+}
+.ticketPrivContent{
+    display: flex;    
+}
+
+.photo_pathZone{      
+    width:20%;
+    height:200px;  
+}
+.photo_pathZone img{
+    padding:10px;
+    width:100%;
+    height:100%;
+}
+.contentZone{        
+    width:70%;    
+    padding : 20px;
+}
+.btnZone{    
+    width:10%;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+
+.btnZone input[type='button']{
+        
+        width: 90px;
+        height: 52px;
+        border: none;
+        border-radius: 10px;
+        background: #ff4b4b;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+    
+}
+
+
+
+/*ticketDetailView*/
+
+.ticketPriv span{
+    display:inline-block;
+    margin-bottom:10px;
+}
+.ticketPrivWrap{
+    display: flex;
+}
+
+.viewTitle{
+    color: rgb(129, 131, 131);
+    width:150px;    
+    font-weight: bold;
+}
+
+.optionWrap{
+    display:flex;
+}
+.viewOptionTitle{
+    color: rgb(129, 131, 131);
+    width:150px;    
+    font-weight: bold;
+}
+
+.refundBtn{
+    text-align: center;
+}
+
+.refundBtn input[type='button']{
+        
+    width: 90px;
+    height: 52px;
+    border: none;
+    border-radius: 10px;
+    background: #ff4b4b;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+
+}
+
+/*customerModify*/
+
+
+.infoZone{        
+    width: 100%;
+    height: 100%;
+    margin: 80px auto; 
+}
+
+.infoZone span{    
+    display: inline-block;
+    text-align: right;
+    width:170px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    color:rgba(3, 3, 3, 0.541);
+    font-size: larger;
+}
+
+.infoZone input[type="text"]{
+    margin-bottom: 10px;
+}
+
+.infoBox{
+    margin-left:220px;    
+}
+
+.btnBox{
+    
+    margin-left:300px;
+}
+
+.btnBox input[type='button']{        
+    width: 120px;
+    height: 52px;
+    border: none;
+    border-radius: 10px;
+    background: #ff4b4b;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    margin:10px;
+
+}

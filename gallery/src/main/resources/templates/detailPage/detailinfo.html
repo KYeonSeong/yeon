@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detailinfo</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=19a05a878632d7922b31a3136408c95b"></script>
+    <script defer src="./js/detailindex.js"></script>
+    <link rel="stylesheet" href="./css/detailInfo.css">
+</head>
+<body>
+    <form name="frmDetailInfo" id="frmDetailInfo" method="post">
+        <h3><strong>예매정보</strong></h3><br>
+        <div id="ticket_info" name="ticket_info" th:utext="${vo.ticket_info}"></div>
+        <br/>
+        <!-- <h3><strong></strong></h3><br>
+        <div id="agency_notice" name="agency_notice" th:utext="${vo.agency_notice}"></div>
+        <br/> -->
+        <h3><strong>이용정보</strong></h3><br>
+        <div id="use_info" name="use_info" th:utext="${vo.use_info}"></div>
+        <br/>
+        <div id="posterContainer">
+            <div id="imgCrop">
+                <img id="poster" name="poster" th:src="@{${vo.photo_path}}">     
+            </div>
+            <button type="button" id="btnSee">펼쳐보기</button>
+        </div>    
+        <br/>
+        <h3><strong>유의사항</strong></h3><br>
+        <div id="notice" name="agency_notice" th:utext="${vo.agency_notice}"></div>
+        <br/>
+        <h3><strong>장소안내</strong></h3><br>
+        <div id="location_info" name="location_info" th:utext="${vo.location_info}"></div>
+        <button type="button" id="mapSee">지도보기</button><br>
+        <div id="map" style="width:550px;height:350px;"></div>
+        <br/>
+        <h3><strong>판매정보</strong></h3><br>
+        <div id="seller_info" name="seller_info" th:utext="${vo.seller_info}"></div>
+    </form>
+</body>
+</html>

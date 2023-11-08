@@ -1,0 +1,199 @@
+2023-09-06 12:57:01.894 INFO  [restartedMain] [com.gallery.gallery.GalleryApplication] - Starting GalleryApplication using Java 17.0.7 with PID 9348 (C:\Users\y\Desktop\work-project 230906\gallery\target\classes started by y in C:\Users\y\Desktop\work-project 230906)
+2023-09-06 12:57:01.897 INFO  [restartedMain] [com.gallery.gallery.GalleryApplication] - No active profile set, falling back to 1 default profile: "default"
+2023-09-06 12:57:02.014 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-06 12:57:02.015 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-06 12:57:03.155 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-06 12:57:03.313 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 139 ms. Found 1 JPA repository interfaces.
+2023-09-06 12:57:04.883 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 80 (http)
+2023-09-06 12:57:04.896 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-80"]
+2023-09-06 12:57:04.901 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2023-09-06 12:57:04.903 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-06 12:57:05.038 INFO  [restartedMain] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2023-09-06 12:57:05.039 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 3022 ms
+2023-09-06 12:57:05.260 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2023-09-06 12:57:05.670 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24413f88
+2023-09-06 12:57:05.673 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2023-09-06 12:57:05.799 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-06 12:57:05.941 INFO  [restartedMain] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-09-06 12:57:05.965 INFO  [restartedMain] [org.hibernate.cfg.Environment] - HHH000406: Using bytecode reflection optimizer
+2023-09-06 12:57:06.260 INFO  [restartedMain] [o.h.b.internal.BytecodeProviderInitiator] - HHH000021: Bytecode provider name : bytebuddy
+2023-09-06 12:57:06.441 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-06 12:57:06.832 INFO  [restartedMain] [o.h.b.internal.BytecodeProviderInitiator] - HHH000021: Bytecode provider name : bytebuddy
+2023-09-06 12:57:07.585 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-06 12:57:07.589 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-06 12:57:09.155 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-06 12:57:09.655 INFO  [restartedMain] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
+2023-09-06 12:57:09.931 WARN  [restartedMain] [org.thymeleaf.templatemode.TemplateMode] - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2023-09-06 12:57:10.242 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2023-09-06 12:57:10.269 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-80"]
+2023-09-06 12:57:10.303 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 80 (http) with context path ''
+2023-09-06 12:57:10.320 INFO  [restartedMain] [com.gallery.gallery.GalleryApplication] - Started GalleryApplication in 9.142 seconds (process running for 9.83)
+2023-09-06 12:57:10.495 INFO  [http-nio-80-exec-2] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-06 12:57:10.496 INFO  [http-nio-80-exec-2] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2023-09-06 12:57:10.504 INFO  [http-nio-80-exec-2] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 1 ms
+2023-09-06 12:57:10.695 WARN  [http-nio-80-exec-2] [o.a.catalina.util.SessionIdGeneratorBase] - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [132] milliseconds.
+2023-09-06 12:57:10.789 ERROR [http-nio-80-exec-2] [o.a.c.c.C.[.[.[/].[dispatcherServlet]] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.gallery.gallery.loginjava.LoginVo.getId()" because "rVo" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.gallery.gallery.loginjava.LoginVo.getId()" because "rVo" is null
+	at com.gallery.gallery.controller.MainController.index(MainController.java:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2023-09-06 13:01:08.532 INFO  [File Watcher] [o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener] - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-06 13:01:08.547 INFO  [Thread-5] [o.apache.coyote.http11.Http11NioProtocol] - Pausing ProtocolHandler ["http-nio-80"]
+2023-09-06 13:01:08.547 INFO  [Thread-5] [o.apache.catalina.core.StandardService] - Stopping service [Tomcat]
+2023-09-06 13:01:08.549 INFO  [Thread-5] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-09-06 13:01:08.566 INFO  [Thread-5] [o.apache.coyote.http11.Http11NioProtocol] - Stopping ProtocolHandler ["http-nio-80"]
+2023-09-06 13:01:08.568 INFO  [Thread-5] [o.apache.coyote.http11.Http11NioProtocol] - Destroying ProtocolHandler ["http-nio-80"]
+2023-09-06 13:01:08.571 INFO  [Thread-5] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-06 13:01:08.575 INFO  [Thread-5] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2023-09-06 13:01:08.585 INFO  [Thread-5] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+2023-09-06 13:01:08.771 INFO  [restartedMain] [com.gallery.gallery.GalleryApplication] - Starting GalleryApplication using Java 17.0.7 with PID 9348 (C:\Users\y\Desktop\work-project 230906\gallery\target\classes started by y in C:\Users\y\Desktop\work-project 230906)
+2023-09-06 13:01:08.772 INFO  [restartedMain] [com.gallery.gallery.GalleryApplication] - No active profile set, falling back to 1 default profile: "default"
+2023-09-06 13:01:09.399 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-06 13:01:09.419 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interfaces.
+2023-09-06 13:01:09.646 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 80 (http)
+2023-09-06 13:01:09.647 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-80"]
+2023-09-06 13:01:09.648 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2023-09-06 13:01:09.649 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-06 13:01:09.682 INFO  [restartedMain] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2023-09-06 13:01:09.683 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 905 ms
+2023-09-06 13:01:09.800 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-2 - Starting...
+2023-09-06 13:01:09.819 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@100a3383
+2023-09-06 13:01:09.821 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-2 - Start completed.
+2023-09-06 13:01:09.823 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-06 13:01:09.833 INFO  [restartedMain] [o.h.b.internal.BytecodeProviderInitiator] - HHH000021: Bytecode provider name : bytebuddy
+2023-09-06 13:01:09.834 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-06 13:01:09.849 INFO  [restartedMain] [o.h.b.internal.BytecodeProviderInitiator] - HHH000021: Bytecode provider name : bytebuddy
+2023-09-06 13:01:09.906 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-06 13:01:09.909 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-06 13:01:10.570 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-06 13:01:10.658 INFO  [restartedMain] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
+2023-09-06 13:01:10.765 WARN  [restartedMain] [org.thymeleaf.templatemode.TemplateMode] - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2023-09-06 13:01:10.844 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2023-09-06 13:01:10.862 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-80"]
+2023-09-06 13:01:10.866 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 80 (http) with context path ''
+2023-09-06 13:01:10.870 INFO  [restartedMain] [com.gallery.gallery.GalleryApplication] - Started GalleryApplication in 2.219 seconds (process running for 250.38)
+2023-09-06 13:01:10.874 INFO  [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener] - Condition evaluation unchanged
+2023-09-06 13:01:11.367 INFO  [http-nio-80-exec-2] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-06 13:01:11.369 INFO  [http-nio-80-exec-2] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2023-09-06 13:01:11.370 INFO  [http-nio-80-exec-2] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 1 ms
+2023-09-06 13:02:04.747 INFO  [restartedMain] [com.gallery.gallery.GalleryApplication] - Starting GalleryApplication using Java 17.0.7 with PID 464 (C:\Users\y\Desktop\work-project 230906\gallery\target\classes started by y in C:\Users\y\Desktop\work-project 230906)
+2023-09-06 13:02:04.750 INFO  [restartedMain] [com.gallery.gallery.GalleryApplication] - No active profile set, falling back to 1 default profile: "default"
+2023-09-06 13:02:04.878 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-06 13:02:04.879 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-06 13:02:05.915 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-06 13:02:06.092 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 164 ms. Found 1 JPA repository interfaces.
+2023-09-06 13:02:07.373 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 80 (http)
+2023-09-06 13:02:07.399 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-80"]
+2023-09-06 13:02:07.403 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2023-09-06 13:02:07.409 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-06 13:02:07.622 INFO  [restartedMain] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2023-09-06 13:02:07.625 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 2744 ms
+2023-09-06 13:02:07.914 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2023-09-06 13:02:08.429 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7fb7ea3
+2023-09-06 13:02:08.432 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2023-09-06 13:02:08.516 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-06 13:02:08.732 INFO  [restartedMain] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-09-06 13:02:08.766 INFO  [restartedMain] [org.hibernate.cfg.Environment] - HHH000406: Using bytecode reflection optimizer
+2023-09-06 13:02:09.117 INFO  [restartedMain] [o.h.b.internal.BytecodeProviderInitiator] - HHH000021: Bytecode provider name : bytebuddy
+2023-09-06 13:02:09.332 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-06 13:02:09.722 INFO  [restartedMain] [o.h.b.internal.BytecodeProviderInitiator] - HHH000021: Bytecode provider name : bytebuddy
+2023-09-06 13:02:10.540 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-06 13:02:10.544 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-06 13:02:11.693 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-06 13:02:11.949 INFO  [restartedMain] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
+2023-09-06 13:02:12.152 WARN  [restartedMain] [org.thymeleaf.templatemode.TemplateMode] - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2023-09-06 13:02:12.338 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2023-09-06 13:02:12.363 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-80"]
+2023-09-06 13:02:12.404 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 80 (http) with context path ''
+2023-09-06 13:02:12.433 INFO  [restartedMain] [com.gallery.gallery.GalleryApplication] - Started GalleryApplication in 8.463 seconds (process running for 9.214)
+2023-09-06 13:02:12.520 INFO  [http-nio-80-exec-2] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-06 13:02:12.521 INFO  [http-nio-80-exec-2] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2023-09-06 13:02:12.527 INFO  [http-nio-80-exec-2] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 5 ms
+2023-09-06 13:02:32.612 WARN  [http-nio-80-exec-4] [o.s.w.s.m.s.DefaultHandlerExceptionResolver] - Resolved [org.springframework.web.bind.ServletRequestBindingException: Missing session attribute 'id' of type String]
+2023-09-06 13:36:36.464 INFO  [File Watcher] [o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener] - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-06 13:36:36.485 INFO  [Thread-5] [o.apache.coyote.http11.Http11NioProtocol] - Pausing ProtocolHandler ["http-nio-80"]
+2023-09-06 13:36:36.486 INFO  [Thread-5] [o.apache.catalina.core.StandardService] - Stopping service [Tomcat]
+2023-09-06 13:36:36.488 INFO  [Thread-5] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-09-06 13:36:36.493 INFO  [Thread-5] [o.apache.coyote.http11.Http11NioProtocol] - Stopping ProtocolHandler ["http-nio-80"]
+2023-09-06 13:36:36.496 INFO  [Thread-5] [o.apache.coyote.http11.Http11NioProtocol] - Destroying ProtocolHandler ["http-nio-80"]
+2023-09-06 13:36:36.502 INFO  [Thread-5] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-06 13:36:36.509 INFO  [Thread-5] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2023-09-06 13:36:36.528 INFO  [Thread-5] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+2023-09-06 13:36:36.716 INFO  [restartedMain] [com.gallery.gallery.GalleryApplication] - Starting GalleryApplication using Java 17.0.7 with PID 464 (C:\Users\y\Desktop\work-project 230906\gallery\target\classes started by y in C:\Users\y\Desktop\work-project 230906)
+2023-09-06 13:36:36.717 INFO  [restartedMain] [com.gallery.gallery.GalleryApplication] - No active profile set, falling back to 1 default profile: "default"
+2023-09-06 13:36:37.518 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-06 13:36:37.551 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 31 ms. Found 1 JPA repository interfaces.
+2023-09-06 13:36:37.776 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 80 (http)
+2023-09-06 13:36:37.778 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-80"]
+2023-09-06 13:36:37.779 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2023-09-06 13:36:37.780 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-06 13:36:37.822 INFO  [restartedMain] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2023-09-06 13:36:37.824 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1099 ms
+2023-09-06 13:36:38.010 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-2 - Starting...
+2023-09-06 13:36:38.046 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@63ba31e9
+2023-09-06 13:36:38.049 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-2 - Start completed.
+2023-09-06 13:36:38.051 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-06 13:36:38.061 INFO  [restartedMain] [o.h.b.internal.BytecodeProviderInitiator] - HHH000021: Bytecode provider name : bytebuddy
+2023-09-06 13:36:38.062 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-06 13:36:38.085 INFO  [restartedMain] [o.h.b.internal.BytecodeProviderInitiator] - HHH000021: Bytecode provider name : bytebuddy
+2023-09-06 13:36:38.484 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-06 13:36:38.485 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-06 13:36:39.113 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-06 13:36:39.220 INFO  [restartedMain] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
+2023-09-06 13:36:39.342 WARN  [restartedMain] [org.thymeleaf.templatemode.TemplateMode] - [THYMELEAF][restartedMain] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2023-09-06 13:36:39.456 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2023-09-06 13:36:39.469 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-80"]
+2023-09-06 13:36:39.488 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 80 (http) with context path ''
+2023-09-06 13:36:39.512 INFO  [restartedMain] [com.gallery.gallery.GalleryApplication] - Started GalleryApplication in 2.896 seconds (process running for 2076.293)
+2023-09-06 13:36:39.524 INFO  [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener] - Condition evaluation unchanged
+2023-09-06 13:36:39.543 INFO  [http-nio-80-exec-1] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-06 13:36:39.544 INFO  [http-nio-80-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2023-09-06 13:36:39.545 INFO  [http-nio-80-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 1 ms

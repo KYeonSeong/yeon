@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    <script defer src="/js/customerModify.js"></script> 
+</head>
+<body>
+    <div class="customerModify" th:fragment="fragment">
+        <h1>회원정보 수정</h1>
+        <form name="frm" class="frm">
+            <div class="infoZone">
+                <div class="infoBox">
+                    <span>아이디 :</span>
+                    <input type="text" name="id" class="id" th:value="${vo.id}" readonly><br>
+
+                    <span>이름 :</span>
+                    <input type="text" name="name" class="name" th:value="${vo.name}" readonly ><br>
+
+                    <span>현재 비밀번호 :</span>
+                    <input type="password" name="pwdView" class="pwdView" autocomplete="off" ><br>
+                    <span class="pwdViewCondition"></span>
+                    <br/>
+
+                    <span>새 비밀번호 :</span>
+                    <input type="password" name="pwd" class="pwd" autocomplete="off"><br>
+                    <span class="pwdCondition"></span>
+                    <br/>
+
+                    <span>새 비밀번호 확인 :</span>
+                    <input type="password" class="pwdCheck" autocomplete="off"><br>
+                    <span class="pwdCheckCondition"></span>
+                    <br/>
+
+                    <span>이메일 :</span>
+                    <input type="text" name="email" class="email" th:value="${vo.email}" readonly>
+                    <input type="button" class="emailBtn" value="이메일 주소 수정하기"><br>
+                    <span class="emailCondition"></span>
+                    <br/>
+                    
+                    <span>휴대폰 번호 :</span>
+                    <input type="text" name="tel" class="tel" th:value="${vo.tel}" readonly>
+                    <input type="button" class="telBtn" value="휴대폰 번호 수정하기"><br>
+                    <span class="telCondition"></span>
+                    <br/>
+                </div>
+                <hr>
+
+                <div class="btnBox">
+                    <input type="button" class="modifyBtn"     value="회원정보 수정">
+                    <input type="button" class="delAccountBtn" value="회원탈퇴">
+                </div>
+            </div>
+        </form>
+    </div>    
+</body>
+</html>

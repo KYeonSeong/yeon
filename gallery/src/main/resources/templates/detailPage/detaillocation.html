@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detaillocation</title>
+    <link rel="stylesheet" href="./css/detaillocation.css">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=19a05a878632d7922b31a3136408c95b"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script defer src="./js/detailindex.js"></script>
+</head>
+<body>
+    <div id="locationContainer">
+        <h2><strong>장소안내</strong></h2><br/>
+        <div id="location_info" th:utext="${vo.location_info}"></div><br/><br/>
+        <button type="button" id="mapSee">지도보기</button>
+        <div id="map" style="width:550px;height:350px;"></div>
+        <div id="place"></div>
+    </div>
+</body>
+</html>
